@@ -1,0 +1,33 @@
+project:
+  name:
+  database:
+  schema:
+
+raw:
+  tables:
+    - name:
+      columns: []
+
+sources:
+  registered_tables: []
+
+staging:
+  models:
+    - name:
+      source:
+
+marts:
+  models:
+    - name:
+      grain:
+
+coverage:
+  source_coverage:
+  staging_coverage:
+  mart_coverage:
+
+issues:
+  missing_sources: []
+  missing_staging: []
+
+next_actions: []
