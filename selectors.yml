@@ -1,0 +1,47 @@
+selectors:
+  - name: staging
+    description: "staging 모델 전체"
+    definition:
+      method: path
+      value: models/staging
+
+  - name: marts
+    description: "marts 모델 전체"
+    definition:
+      method: path
+      value: models/marts
+
+  - name: daily_marts
+    description: "daily 태그가 붙은 marts 모델"
+    definition:
+      intersection:
+        - method: path
+          value: models/marts
+        - method: tag
+          value: daily
+
+  - name: ci_modified
+    description: "CI에서 변경된 모델과 downstream만 검증"
+    definition:
+      method: state
+      value: modified
+      children: true
+      exclude:
+        - method: tag
+          value: backfill
+        - method: tag
+          value: heavy
+        - method: tag
+          value: manual
+
+  - name: ci_modified_buildable
+    description: "CI에서 변경된 모델의 downstream과 필요한 부모까지 포함"
+    definition:
+      method: state
+      value: modified
+      childrens_parents: true
+      exclude:
+        - method: tag
+          value: backfill
+        - method: tag
+          value: manual

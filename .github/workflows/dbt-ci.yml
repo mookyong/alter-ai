@@ -1,0 +1,55 @@
+name: dbt-ci
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  dbt:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_DB: dbt_edu
+          POSTGRES_USER: dbt
+          POSTGRES_PASSWORD: dbt
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready -U dbt -d dbt_edu
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      DBT_PROFILES_DIR: ${{ github.workspace }}/.dbt
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dbt-postgres
+        run: pip install dbt-postgres
+
+      - name: Write dbt profile
+        run: |
+          mkdir -p .dbt
+          cp profiles.example.yml .dbt/profiles.yml
+
+      - name: Seed
+        run: dbt seed --profiles-dir .
+
+      - name: Source freshness
+        run: dbt source freshness --profiles-dir .
+
+      - name: Snapshot
+        run: dbt snapshot --profiles-dir .
+
+      - name: Build changed models
+        run: dbt build --selector ci_modified --state state/prod --defer --profiles-dir .

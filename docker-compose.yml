@@ -1,0 +1,20 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: dbt_education_postgres
+    environment:
+      POSTGRES_DB: dbt_edu
+      POSTGRES_USER: dbt
+      POSTGRES_PASSWORD: dbt
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U dbt -d dbt_edu"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  postgres_data:

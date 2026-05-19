@@ -1,0 +1,34 @@
+name: postgres_dbt_education
+version: '1.0.0'
+config-version: 2
+
+profile: postgres_dbt_education
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+analysis-paths: ["analyses"]
+snapshot-paths: ["snapshots"]
+test-paths: ["tests"]
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  postgres_dbt_education:
+    staging:
+      +materialized: view
+      +schema: staging
+      +tags: ["staging"]
+    intermediate:
+      +materialized: view
+      +schema: intermediate
+    marts:
+      +materialized: table
+      +schema: marts
+      +tags: ["daily"]
+
+seeds:
+  postgres_dbt_education:
+    +schema: raw

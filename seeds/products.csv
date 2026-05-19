@@ -1,0 +1,13 @@
+product_id,product_name,category,unit_price,is_active,launched_at
+1,Wireless Mouse,Accessories,25.00,true,2023-01-10
+2,Mechanical Keyboard,Accessories,89.00,true,2023-02-14
+3,USB-C Hub,Accessories,45.00,true,2023-03-03
+4,27inch Monitor,Hardware,219.00,true,2023-03-20
+5,Laptop Stand,Accessories,35.00,true,2023-04-11
+6,Webcam HD,Hardware,59.00,true,2023-05-09
+7,Noise Cancelling Headset,Audio,129.00,true,2023-05-25
+8,Desk Lamp,Office,32.00,true,2023-06-08
+9,Ergonomic Chair,Office,180.00,true,2023-06-21
+10,Notebook Pro,Stationery,12.00,true,2023-07-14
+11,Pen Set,Stationery,8.00,true,2023-08-05
+12,Portable SSD 1TB,Storage,149.00,true,2023-08-27

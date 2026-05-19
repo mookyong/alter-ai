@@ -1,0 +1,11 @@
+version: 2
+
+seeds:
+  - name: customers
+    description: "고객 마스터 샘플 데이터"
+  - name: products
+    description: "상품 마스터 샘플 데이터"
+  - name: orders
+    description: "주문 헤더 샘플 데이터"
+  - name: order_items
+    description: "주문 상세 샘플 데이터"

@@ -1,0 +1,21 @@
+postgres_dbt_education:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: localhost
+      user: dbt
+      password: dbt
+      port: 5432
+      dbname: dbt_edu
+      schema: analytics
+      threads: 4
+    ci:
+      type: postgres
+      host: localhost
+      user: dbt
+      password: dbt
+      port: 5432
+      dbname: dbt_edu
+      schema: analytics_ci
+      threads: 4

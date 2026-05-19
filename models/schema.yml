@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: stg_customers
+    description: "고객 seed를 정규화한 staging 모델"
+  - name: stg_products
+    description: "상품 seed를 정규화한 staging 모델"
+  - name: stg_orders
+    description: "주문 seed를 정규화한 staging 모델"
+  - name: stg_order_items
+    description: "주문 상세 seed를 정규화한 staging 모델"
+  - name: int_orders_enriched
+    description: "주문 단위로 집계한 intermediate 모델"
+  - name: int_customer_metrics
+    description: "고객별 구매 지표를 계산한 intermediate 모델"
+  - name: dim_customers
+    description: "고객 분석용 차원 테이블"
+  - name: dim_products
+    description: "상품 분석용 차원 테이블"
+  - name: fct_orders
+    description: "주문 단위 팩트 테이블"
+  - name: fct_order_items
+    description: "주문 상세 단위 팩트 테이블"
+  - name: mart_sales_summary
+    description: "일자, 채널, 카테고리 기준 매출 요약"
