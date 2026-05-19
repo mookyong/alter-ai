@@ -1,0 +1,64 @@
+version: 2
+
+models:
+  - name: stg_customers
+    description: "고객 seed를 분석용 컬럼으로 정리한 staging 모델"
+    columns:
+      - name: customer_id
+        tests:
+          - not_null
+          - unique
+      - name: email
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_products
+    description: "상품 seed를 정리한 staging 모델"
+    columns:
+      - name: product_id
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_orders
+    description: "주문 헤더 staging 모델"
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+          - unique
+      - name: customer_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_customers')
+                field: customer_id
+      - name: status
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['placed', 'shipped', 'delivered', 'returned', 'cancelled']
+
+  - name: stg_order_items
+    description: "주문 상세 staging 모델"
+    columns:
+      - name: order_item_id
+        tests:
+          - not_null
+          - unique
+      - name: order_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_orders')
+                field: order_id
+      - name: product_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_products')
+                field: product_id

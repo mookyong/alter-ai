@@ -1,0 +1,12 @@
+educational_postgres:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: "{{ env_var('DBT_PGHOST', 'localhost') }}"
+      user: "{{ env_var('DBT_PGUSER', 'dbt') }}"
+      password: "{{ env_var('DBT_PGPASSWORD', 'dbt') }}"
+      port: 5432
+      dbname: "{{ env_var('DBT_PGDATABASE', 'educational_dbt') }}"
+      schema: "{{ env_var('DBT_PGSCHEMA', 'analytics') }}"
+      threads: 4

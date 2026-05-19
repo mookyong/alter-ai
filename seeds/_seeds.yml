@@ -1,0 +1,58 @@
+version: 2
+
+seeds:
+  - name: customers
+    description: "주문 교육용 고객 샘플 데이터"
+    columns:
+      - name: customer_id
+        tests:
+          - not_null
+          - unique
+      - name: email
+        tests:
+          - not_null
+          - unique
+
+  - name: products
+    description: "주문 교육용 상품 샘플 데이터"
+    columns:
+      - name: product_id
+        tests:
+          - not_null
+          - unique
+
+  - name: orders
+    description: "주문 헤더 샘플 데이터"
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+          - unique
+      - name: customer_id
+        tests:
+          - not_null
+
+  - name: order_items
+    description: "주문 상세 샘플 데이터"
+    columns:
+      - name: order_item_id
+        tests:
+          - not_null
+          - unique
+      - name: order_id
+        tests:
+          - not_null
+      - name: product_id
+        tests:
+          - not_null
+
+  - name: retry_controls
+    description: "retry 실습용 제어 데이터"
+    columns:
+      - name: task_name
+        tests:
+          - not_null
+          - unique
+      - name: should_fail
+        tests:
+          - not_null

@@ -1,0 +1,25 @@
+version: 2
+
+sources:
+  - name: raw_orders_training
+    description: "교육용 주문 도메인의 raw seed source"
+    schema: analytics_raw
+    freshness:
+      warn_after:
+        count: 1000
+        period: day
+      error_after:
+        count: 2000
+        period: day
+    loaded_at_field: loaded_at
+    tables:
+      - name: customers
+        description: "고객 원천 seed"
+      - name: products
+        description: "상품 원천 seed"
+      - name: orders
+        description: "주문 원천 seed"
+      - name: order_items
+        description: "주문 상세 원천 seed"
+      - name: retry_controls
+        description: "retry 실습용 제어 seed"

@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: educational_postgres_db
+    environment:
+      POSTGRES_USER: ${DBT_PGUSER:-dbt}
+      POSTGRES_PASSWORD: ${DBT_PGPASSWORD:-dbt}
+      POSTGRES_DB: ${DBT_PGDATABASE:-educational_dbt}
+    ports:
+      - "${DBT_PGPORT:-5432}:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U dbt -d educational_dbt"]
+      interval: 5s
+      timeout: 5s
+      retries: 10

@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: int_order_items_enriched
+    description: "주문 상세, 주문 헤더, 상품을 조인한 중간 모델"
+    columns:
+      - name: order_item_id
+        tests:
+          - not_null
+          - unique

@@ -1,0 +1,6 @@
+product_id,product_name,category,subcategory,unit_price,active_flag,loaded_at
+101,Wireless Mouse,Electronics,Accessories,25000,true,2026-05-18 12:00:00
+102,Mechanical Keyboard,Electronics,Accessories,85000,true,2026-05-18 12:00:00
+103,27in Monitor,Electronics,Display,240000,true,2026-05-18 12:00:00
+104,USB-C Hub,Electronics,Accessories,18000,true,2026-05-18 12:00:00
+105,Notebook,Stationery,Office Supplies,4500,true,2026-05-18 12:00:00

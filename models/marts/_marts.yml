@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: fct_orders
+    description: "주문 단위의 매출 fact"
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+          - unique
+      - name: total_order_amount
+        tests:
+          - not_null
+
+  - name: dim_customers
+    description: "고객 기준 요약 dim"
+    columns:
+      - name: customer_id
+        tests:
+          - not_null
+          - unique
+
+  - name: dim_products
+    description: "상품 기준 매출 dim"
+    columns:
+      - name: product_id
+        tests:
+          - not_null
+          - unique
+
+  - name: fct_daily_sales
+    description: "일자별 판매 요약 fact"

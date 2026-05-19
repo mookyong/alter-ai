@@ -1,0 +1,7 @@
+customer_id,first_name,last_name,email,city,state,country,signup_date,customer_segment,loaded_at
+1,Minho,Kim,minho.kim@example.com,Seoul,Seoul,KR,2024-01-15,Consumer,2026-05-18 12:00:00
+2,Jiwoo,Park,jiwoo.park@example.com,Busan,Busan,KR,2024-02-02,Corporate,2026-05-18 12:00:00
+3,Sora,Lee,sora.lee@example.com,Incheon,Incheon,KR,2024-02-18,Consumer,2026-05-18 12:00:00
+4,Hyunwoo,Choi,hyunwoo.choi@example.com,Daegu,Daegu,KR,2024-03-09,Home Office,2026-05-18 12:00:00
+5,Yuna,Jung,yuna.jung@example.com,Daejeon,Daejeon,KR,2024-03-27,Consumer,2026-05-18 12:00:00
+6,Jisoo,Han,jisoo.han@example.com,Gwangju,Gwangju,KR,2024-04-11,Corporate,2026-05-18 12:00:00
