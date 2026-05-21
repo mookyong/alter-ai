@@ -1,0 +1,12 @@
+dbt_local_demo:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: localhost
+      user: airflow
+      password: airflow
+      port: 5432
+      dbname: dbt_demo
+      schema: analytics
+      threads: 1

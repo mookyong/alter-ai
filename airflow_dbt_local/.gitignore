@@ -1,0 +1,5 @@
+airflow/logs/
+airflow/plugins/
+airflow/__pycache__/
+dbt/target/
+dbt/logs/

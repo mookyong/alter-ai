@@ -1,0 +1,9 @@
+name: dbt-local
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+      - dbt-core==1.9.10
+      - dbt-postgres==1.9.1
