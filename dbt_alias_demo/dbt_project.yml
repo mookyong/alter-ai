@@ -1,0 +1,25 @@
+name: dbt_alias_demo
+version: 1.0.0
+config-version: 2
+
+profile: dbt_alias_demo
+
+model-paths: ["models"]
+macro-paths: ["macros"]
+seed-paths: ["seeds"]
+snapshot-paths: ["snapshots"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  dbt_alias_demo:
+    +materialized: table
+    a:
+      +schema: a
+    b:
+      +schema: b

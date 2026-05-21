@@ -1,0 +1,37 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: dbt-alias-demo-postgres
+    environment:
+      POSTGRES_USER: dbt
+      POSTGRES_PASSWORD: dbt
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U dbt -d postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  init-db:
+    image: postgres:16
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      PGPASSWORD: dbt
+    command:
+      - bash
+      - -lc
+      - |
+          exists=$$(psql -h postgres -U dbt -d postgres -tAc "select 1 from pg_database where datname = 'dbt_alias_demo'")
+          if [ "$$exists" != "1" ]; then
+            createdb -h postgres -U dbt dbt_alias_demo
+          fi
+    restart: "no"
+
+volumes:
+  postgres_data:

@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: a_customer
+    columns:
+      - name: customer_id
+        tests:
+          - not_null
+      - name: customer_name
+        tests:
+          - not_null
+  - name: b_customer
+    columns:
+      - name: customer_id
+        tests:
+          - not_null
+      - name: customer_name
+        tests:
+          - not_null
+  - name: combined_customers
+    columns:
+      - name: model_name
+        tests:
+          - not_null
+      - name: customer_id
+        tests:
+          - not_null
+      - name: customer_name
+        tests:
+          - not_null
