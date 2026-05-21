@@ -49,7 +49,7 @@ services:
       - -c
       - |
         mkdir -p /opt/airflow/{dags,logs,plugins,dbt}
-        chown -R "${AIRFLOW_UID:-50000}:0" /opt/airflow/{dags,logs,plugins,dbt}
+        chown -R "${AIRFLOW_UID:-50000}:0" /opt/airflow/{dags,logs,plugins}
         airflow db migrate
         if ! airflow users list | grep -q "^${_AIRFLOW_WWW_USER_USERNAME:-airflow}[[:space:]]"; then
           airflow users create \
