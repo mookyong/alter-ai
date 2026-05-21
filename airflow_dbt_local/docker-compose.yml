@@ -25,6 +25,7 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
+    user: "0:0"
     environment:
       AIRFLOW_UID: ${AIRFLOW_UID:-50000}
       AIRFLOW__CORE__EXECUTOR: LocalExecutor
@@ -40,13 +41,15 @@ services:
       _AIRFLOW_WWW_USER_PASSWORD: ${_AIRFLOW_WWW_USER_PASSWORD:-airflow}
     volumes:
       - ./airflow/dags:/opt/airflow/dags
-      - ./airflow/logs:/opt/airflow/logs
+      - airflow_logs:/opt/airflow/logs
       - ./airflow/plugins:/opt/airflow/plugins
       - ./dbt:/opt/airflow/dbt
     entrypoint: /bin/bash
     command:
       - -c
       - |
+        mkdir -p /opt/airflow/{dags,logs,plugins,dbt}
+        chown -R "${AIRFLOW_UID:-50000}:0" /opt/airflow/{dags,logs,plugins,dbt}
         airflow db migrate
         if ! airflow users list | grep -q "^${_AIRFLOW_WWW_USER_USERNAME:-airflow}[[:space:]]"; then
           airflow users create \
@@ -81,7 +84,7 @@ services:
       AIRFLOW_CONN_DBT_POSTGRES: postgresql://airflow:airflow@postgres:5432/dbt_demo
     volumes:
       - ./airflow/dags:/opt/airflow/dags
-      - ./airflow/logs:/opt/airflow/logs
+      - airflow_logs:/opt/airflow/logs
       - ./airflow/plugins:/opt/airflow/plugins
       - ./dbt:/opt/airflow/dbt
     command: api-server
@@ -107,7 +110,7 @@ services:
       AIRFLOW_CONN_DBT_POSTGRES: postgresql://airflow:airflow@postgres:5432/dbt_demo
     volumes:
       - ./airflow/dags:/opt/airflow/dags
-      - ./airflow/logs:/opt/airflow/logs
+      - airflow_logs:/opt/airflow/logs
       - ./airflow/plugins:/opt/airflow/plugins
       - ./dbt:/opt/airflow/dbt
     command: scheduler
@@ -133,7 +136,7 @@ services:
       AIRFLOW_CONN_DBT_POSTGRES: postgresql://airflow:airflow@postgres:5432/dbt_demo
     volumes:
       - ./airflow/dags:/opt/airflow/dags
-      - ./airflow/logs:/opt/airflow/logs
+      - airflow_logs:/opt/airflow/logs
       - ./airflow/plugins:/opt/airflow/plugins
       - ./dbt:/opt/airflow/dbt
     command: dag-processor
@@ -159,10 +162,11 @@ services:
       AIRFLOW_CONN_DBT_POSTGRES: postgresql://airflow:airflow@postgres:5432/dbt_demo
     volumes:
       - ./airflow/dags:/opt/airflow/dags
-      - ./airflow/logs:/opt/airflow/logs
+      - airflow_logs:/opt/airflow/logs
       - ./airflow/plugins:/opt/airflow/plugins
       - ./dbt:/opt/airflow/dbt
     command: triggerer
 
 volumes:
   postgres_data:
+  airflow_logs:

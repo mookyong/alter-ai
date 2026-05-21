@@ -1,3 +1,5 @@
+-- depends_on: {{ ref('stg_customers') }}
+
 select
     city,
     count(*) as customer_count

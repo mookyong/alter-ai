@@ -38,6 +38,10 @@ This stack is configured for Airflow 3.0 local development:
 - for local development, use a separate `conda` env for `dbt` so it does not affect the Airflow container image
 - after a fresh start, run `airflow dags reserialize` if the DAG does not appear in `airflow dags list` yet
 - Airflow 3 emits Cosmos dataset URI warnings because URI validation changed from Airflow 2.x; the DAG still runs successfully
+- the Airflow log directory is mounted as a named Docker volume to avoid host permission issues with `LocalExecutor`
+- if you add new seed data in `postgres/init/01-init.sql`, use `docker compose down -v` for a clean re-seed on the next start
+- if dbt cannot infer model dependencies, add a `-- depends_on: {{ ref('...') }}` hint at the top of the model
+- if dbt reports `dbt was unable to infer all dependencies`, it means the model dependency was not clear enough during parsing, so add an explicit `-- depends_on: {{ ref('stg_customers') }}`-style hint
 
 ## Run
 
@@ -94,6 +98,8 @@ Expected tasks:
 
 - `stg_customers_run`
 - `customer_summary_run`
+- `stg_orders_run`
+- `orders_summary_run`
 
 To run the DAG once and verify dbt execution:
 
@@ -101,8 +107,29 @@ To run the DAG once and verify dbt execution:
 docker compose exec airflow-apiserver airflow dags test dbt_cosmos_demo 2024-05-21
 ```
 
-## dbt commands
+## New Model Flow
 
+When you add a new dbt model under `dbt/models/`, Cosmos will pick it up on the next Airflow parse cycle.
+
+```mermaid
+flowchart TD
+  A[Edit or add dbt model file] --> B[File is visible in the Airflow container]
+  B --> C[Airflow scheduler / dag-processor reparses the DAG]
+  C --> D[Cosmos runs dbt ls again]
+  D --> E[New model discovered]
+  E --> F[New Airflow task added]
+  F --> G[Run airflow dags reserialize if needed]
+```
+
+Example:
+
+- add `dbt/models/staging/stg_orders.sql`
+- add `dbt/models/marts/orders_summary.sql`
+- Airflow will create tasks like `stg_orders_run` and `orders_summary_run`
+- `ref('stg_orders')` makes the DAG run `stg_orders_run` before `orders_summary_run`
+
+## dbt commands
+  
 Run dbt locally with the same warehouse connection. If you use `conda`, create a separate env for dbt:
 
 ```bash
