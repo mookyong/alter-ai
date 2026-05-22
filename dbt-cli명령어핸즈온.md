@@ -9,6 +9,8 @@
 샘플 데이터 생성(seed용 csv 또는 insert sql)
 도메인 및 샘플 데이터에 맞춘 모델 생성
 가준 DB 실행용 docker compose 파일 생성
+DBT 실행 로컬 실행 방식으로
+profiles.yml은 프로젝트 root에 위치
 프로젝트 실행 방법 제시
 #--------------------
 
