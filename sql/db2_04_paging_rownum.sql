@@ -1,0 +1,10 @@
+SELECT EMPNO, FIRSTNME, LASTNAME, HIREDATE
+FROM EMPLOYEE
+WHERE DEPTNO = 'D11'
+QUALIFY ROW_NUMBER() OVER (ORDER BY HIREDATE DESC) BETWEEN 11 AND 20;
+
+-- Validation rules:
+-- 1. DEPTNO = 'D11' 필터가 유지되어야 한다.
+-- 2. HIREDATE DESC 기준으로 11번째부터 20번째 행만 반환해야 한다.
+-- 3. ROW_NUMBER 기반 페이지네이션 의미가 유지되어야 한다.
+-- 4. 반환 컬럼은 EMPNO, FIRSTNME, LASTNAME, HIREDATE 여야 한다.

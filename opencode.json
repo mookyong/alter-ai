@@ -1,0 +1,15 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "command": {
+    "db2-snowflake-convert": {
+      "description": "Convert DB2 SQL files under sql/ to Snowflake SQL using the db2-snowflake-converter subagent.",
+      "agent": "db2-snowflake-converter",
+      "template": "Convert the DB2 SQL files under `sql/` to Snowflake SQL. Use the `db2-snowflake-converter` subagent, preserve meaning, write successful output to `output/`, keep failures in `failed/`, and follow `db2_to_snowflake_prompt.md` as the source of truth."
+    },
+    "db2-snowflake-retry-failed": {
+      "description": "Retry previously failed DB2 to Snowflake conversions from failed/.",
+      "agent": "db2-snowflake-converter",
+      "template": "Retry the DB2 SQL files under `failed/` using the `db2-snowflake-converter` subagent. Preserve previous failure context, write successful output to `output/`, and clean up failed artifacts when safe. Follow `db2_to_snowflake_prompt.md` as the source of truth."
+    }
+  }
+}
