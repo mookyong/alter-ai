@@ -1,0 +1,7 @@
+.dbt/
+target/
+logs/
+packages/
+*.pyc
+airflow/config/profiles.yml
+airflow/config/cosmos_dbt_ls.json

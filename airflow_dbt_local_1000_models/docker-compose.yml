@@ -1,0 +1,414 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: airflow_postgres
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-airflow}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-airflow}
+      POSTGRES_DB: ${POSTGRES_DB:-airflow}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      - ./postgres/init:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-airflow} -d ${POSTGRES_DB:-airflow}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7
+    container_name: airflow_redis
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  airflow-init:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ${AIRFLOW_IMAGE_NAME:-airflow-dbt-local-1000-models:latest}
+    container_name: airflow_init
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      AIRFLOW__CORE__EXECUTOR: CeleryExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${POSTGRES_USER:-airflow}:${POSTGRES_PASSWORD:-airflow}@postgres:5432/${POSTGRES_DB:-airflow}
+      AIRFLOW_CONN_POSTGRES_DBT: postgresql://${POSTGRES_USER:-airflow}:${POSTGRES_PASSWORD:-airflow}@postgres:5432/analytics
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      AIRFLOW__WEBSERVER__EXPOSE_CONFIG: "true"
+      AIRFLOW__CORE__EXECUTION_API_SERVER_URL: http://airflow_api_server:8080/execution/
+      AIRFLOW__API_AUTH__JWT_SECRET: airflow-execution-jwt-secret
+      AIRFLOW__CORE__SIMPLE_AUTH_MANAGER_PASSWORDS_FILE: /opt/airflow/auth/simple_auth_manager_passwords.json
+      AIRFLOW__CELERY__BROKER_URL: redis://redis:6379/0
+      AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://${POSTGRES_USER:-airflow}:${POSTGRES_PASSWORD:-airflow}@postgres:5432/${POSTGRES_DB:-airflow}
+      AIRFLOW_UID: ${AIRFLOW_UID:-50000}
+    user: "0:0"
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+      - ./airflow/logs:/opt/airflow/logs
+      - ./airflow/plugins:/opt/airflow/plugins
+      - ./airflow/config:/opt/airflow/config
+      - ./:/opt/project
+      - airflow-auth:/opt/airflow/auth
+    entrypoint: /bin/bash
+    command:
+      - -c
+      - |
+        until getent hosts postgres >/dev/null 2>&1; do sleep 2; done
+        mkdir -p /opt/airflow/logs/dag_processor /opt/airflow/logs/scheduler /opt/airflow/logs/triggerer
+        chmod -R 777 /opt/airflow/logs
+        mkdir -p /opt/airflow/config
+        cat > /opt/airflow/config/profiles.yml <<EOF
+        airflow_dbt_local_1000_models:
+          target: dev
+          outputs:
+            dev:
+              type: postgres
+              host: postgres
+              user: airflow
+              password: airflow
+              port: 5432
+              dbname: airflow
+              schema: dbt_dev
+              threads: 4
+        EOF
+        dbt parse \
+          --project-dir /opt/project \
+          --profiles-dir /opt/airflow/config \
+          --profile airflow_dbt_local_1000_models \
+          --target dev
+        printf '{"admin": "admin"}\n' > /opt/airflow/auth/simple_auth_manager_passwords.json
+        chmod 666 /opt/airflow/auth/simple_auth_manager_passwords.json
+        airflow db migrate && \
+        true
+
+  airflow-api-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ${AIRFLOW_IMAGE_NAME:-airflow-dbt-local-1000-models:latest}
+    container_name: airflow_api_server
+    depends_on:
+      airflow-init:
+        condition: service_completed_successfully
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      AIRFLOW__CORE__EXECUTOR: CeleryExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${POSTGRES_USER:-airflow}:${POSTGRES_PASSWORD:-airflow}@postgres:5432/${POSTGRES_DB:-airflow}
+      AIRFLOW_CONN_POSTGRES_DBT: postgresql://${POSTGRES_USER:-airflow}:${POSTGRES_PASSWORD:-airflow}@postgres:5432/analytics
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      AIRFLOW__CORE__EXECUTION_API_SERVER_URL: http://airflow_api_server:8080/execution/
+      AIRFLOW__API_AUTH__JWT_SECRET: airflow-execution-jwt-secret
+      AIRFLOW__CORE__SIMPLE_AUTH_MANAGER_PASSWORDS_FILE: /opt/airflow/auth/simple_auth_manager_passwords.json
+      AIRFLOW__CELERY__BROKER_URL: redis://redis:6379/0
+      AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://${POSTGRES_USER:-airflow}:${POSTGRES_PASSWORD:-airflow}@postgres:5432/${POSTGRES_DB:-airflow}
+      AIRFLOW_UID: ${AIRFLOW_UID:-50000}
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+      - ./airflow/logs:/opt/airflow/logs
+      - ./airflow/plugins:/opt/airflow/plugins
+      - ./airflow/config:/opt/airflow/config
+      - airflow-auth:/opt/airflow/auth
+      - ./:/opt/project:ro
+    entrypoint: /bin/bash
+    command:
+      - -c
+      - |
+        until getent hosts postgres >/dev/null 2>&1; do sleep 2; done
+        exec airflow api-server
+
+  airflow-scheduler:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ${AIRFLOW_IMAGE_NAME:-airflow-dbt-local-1000-models:latest}
+    container_name: airflow_scheduler
+    depends_on:
+      airflow-init:
+        condition: service_completed_successfully
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      AIRFLOW__CORE__EXECUTOR: CeleryExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${POSTGRES_USER:-airflow}:${POSTGRES_PASSWORD:-airflow}@postgres:5432/${POSTGRES_DB:-airflow}
+      AIRFLOW_CONN_POSTGRES_DBT: postgresql://${POSTGRES_USER:-airflow}:${POSTGRES_PASSWORD:-airflow}@postgres:5432/analytics
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      AIRFLOW__CORE__EXECUTION_API_SERVER_URL: http://airflow_api_server:8080/execution/
+      AIRFLOW__API_AUTH__JWT_SECRET: airflow-execution-jwt-secret
+      AIRFLOW__CORE__SIMPLE_AUTH_MANAGER_PASSWORDS_FILE: /opt/airflow/auth/simple_auth_manager_passwords.json
+      AIRFLOW__CELERY__BROKER_URL: redis://redis:6379/0
+      AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://${POSTGRES_USER:-airflow}:${POSTGRES_PASSWORD:-airflow}@postgres:5432/${POSTGRES_DB:-airflow}
+      AIRFLOW_UID: ${AIRFLOW_UID:-50000}
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+      - ./airflow/logs:/opt/airflow/logs
+      - ./airflow/plugins:/opt/airflow/plugins
+      - ./airflow/config:/opt/airflow/config
+      - airflow-auth:/opt/airflow/auth
+      - ./:/opt/project:ro
+    entrypoint: /bin/bash
+    command:
+      - -c
+      - |
+        until getent hosts postgres >/dev/null 2>&1; do sleep 2; done
+        exec airflow scheduler
+
+  airflow-dag-processor:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ${AIRFLOW_IMAGE_NAME:-airflow-dbt-local-1000-models:latest}
+    container_name: airflow_dag_processor
+    depends_on:
+      airflow-init:
+        condition: service_completed_successfully
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      AIRFLOW__CORE__EXECUTOR: CeleryExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${POSTGRES_USER:-airflow}:${POSTGRES_PASSWORD:-airflow}@postgres:5432/${POSTGRES_DB:-airflow}
+      AIRFLOW_CONN_POSTGRES_DBT: postgresql://${POSTGRES_USER:-airflow}:${POSTGRES_PASSWORD:-airflow}@postgres:5432/analytics
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      AIRFLOW__CORE__EXECUTION_API_SERVER_URL: http://airflow_api_server:8080/execution/
+      AIRFLOW__API_AUTH__JWT_SECRET: airflow-execution-jwt-secret
+      AIRFLOW__CORE__SIMPLE_AUTH_MANAGER_PASSWORDS_FILE: /opt/airflow/auth/simple_auth_manager_passwords.json
+      AIRFLOW__CELERY__BROKER_URL: redis://redis:6379/0
+      AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://${POSTGRES_USER:-airflow}:${POSTGRES_PASSWORD:-airflow}@postgres:5432/${POSTGRES_DB:-airflow}
+      AIRFLOW_UID: ${AIRFLOW_UID:-50000}
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+      - ./airflow/logs:/opt/airflow/logs
+      - ./airflow/plugins:/opt/airflow/plugins
+      - ./airflow/config:/opt/airflow/config
+      - airflow-auth:/opt/airflow/auth
+      - ./:/opt/project:ro
+    entrypoint: /bin/bash
+    command:
+      - -c
+      - |
+        until getent hosts postgres >/dev/null 2>&1; do sleep 2; done
+        exec airflow dag-processor
+
+  airflow-triggerer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ${AIRFLOW_IMAGE_NAME:-airflow-dbt-local-1000-models:latest}
+    container_name: airflow_triggerer
+    depends_on:
+      airflow-init:
+        condition: service_completed_successfully
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      AIRFLOW__CORE__EXECUTOR: CeleryExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${POSTGRES_USER:-airflow}:${POSTGRES_PASSWORD:-airflow}@postgres:5432/${POSTGRES_DB:-airflow}
+      AIRFLOW_CONN_POSTGRES_DBT: postgresql://${POSTGRES_USER:-airflow}:${POSTGRES_PASSWORD:-airflow}@postgres:5432/analytics
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      AIRFLOW__CORE__EXECUTION_API_SERVER_URL: http://airflow_api_server:8080/execution/
+      AIRFLOW__API_AUTH__JWT_SECRET: airflow-execution-jwt-secret
+      AIRFLOW__CORE__SIMPLE_AUTH_MANAGER_PASSWORDS_FILE: /opt/airflow/auth/simple_auth_manager_passwords.json
+      AIRFLOW__CELERY__BROKER_URL: redis://redis:6379/0
+      AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://${POSTGRES_USER:-airflow}:${POSTGRES_PASSWORD:-airflow}@postgres:5432/${POSTGRES_DB:-airflow}
+      AIRFLOW_UID: ${AIRFLOW_UID:-50000}
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+      - ./airflow/logs:/opt/airflow/logs
+      - ./airflow/plugins:/opt/airflow/plugins
+      - ./airflow/config:/opt/airflow/config
+      - airflow-auth:/opt/airflow/auth
+      - ./:/opt/project:ro
+    entrypoint: /bin/bash
+    command:
+      - -c
+      - |
+        until getent hosts postgres >/dev/null 2>&1; do sleep 2; done
+        exec airflow triggerer
+
+  airflow-worker-1:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ${AIRFLOW_IMAGE_NAME:-airflow-dbt-local-1000-models:latest}
+    container_name: airflow_worker_1
+    depends_on:
+      airflow-init:
+        condition: service_completed_successfully
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      AIRFLOW__CORE__EXECUTOR: CeleryExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${POSTGRES_USER:-airflow}:${POSTGRES_PASSWORD:-airflow}@postgres:5432/${POSTGRES_DB:-airflow}
+      AIRFLOW_CONN_POSTGRES_DBT: postgresql://${POSTGRES_USER:-airflow}:${POSTGRES_PASSWORD:-airflow}@postgres:5432/analytics
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      AIRFLOW__CORE__EXECUTION_API_SERVER_URL: http://airflow_api_server:8080/execution/
+      AIRFLOW__API_AUTH__JWT_SECRET: airflow-execution-jwt-secret
+      AIRFLOW__CORE__SIMPLE_AUTH_MANAGER_PASSWORDS_FILE: /opt/airflow/auth/simple_auth_manager_passwords.json
+      AIRFLOW__CELERY__BROKER_URL: redis://redis:6379/0
+      AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://${POSTGRES_USER:-airflow}:${POSTGRES_PASSWORD:-airflow}@postgres:5432/${POSTGRES_DB:-airflow}
+      AIRFLOW__CELERY__WORKER_CONCURRENCY: 1
+      AIRFLOW__CELERY__WORKER_PREFETCH_MULTIPLIER: 1
+      AIRFLOW_UID: ${AIRFLOW_UID:-50000}
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+      - ./airflow/logs:/opt/airflow/logs
+      - ./airflow/plugins:/opt/airflow/plugins
+      - ./airflow/config:/opt/airflow/config
+      - airflow-auth:/opt/airflow/auth
+      - ./:/opt/project:ro
+    entrypoint: /bin/bash
+    command:
+      - -c
+      - |
+        until getent hosts postgres >/dev/null 2>&1; do sleep 2; done
+        until getent hosts redis >/dev/null 2>&1; do sleep 2; done
+        exec airflow celery worker -H airflow_worker_1@%h -c 1
+
+  airflow-worker-2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ${AIRFLOW_IMAGE_NAME:-airflow-dbt-local-1000-models:latest}
+    container_name: airflow_worker_2
+    depends_on:
+      airflow-init:
+        condition: service_completed_successfully
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      AIRFLOW__CORE__EXECUTOR: CeleryExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${POSTGRES_USER:-airflow}:${POSTGRES_PASSWORD:-airflow}@postgres:5432/${POSTGRES_DB:-airflow}
+      AIRFLOW_CONN_POSTGRES_DBT: postgresql://${POSTGRES_USER:-airflow}:${POSTGRES_PASSWORD:-airflow}@postgres:5432/analytics
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      AIRFLOW__CORE__EXECUTION_API_SERVER_URL: http://airflow_api_server:8080/execution/
+      AIRFLOW__API_AUTH__JWT_SECRET: airflow-execution-jwt-secret
+      AIRFLOW__CORE__SIMPLE_AUTH_MANAGER_PASSWORDS_FILE: /opt/airflow/auth/simple_auth_manager_passwords.json
+      AIRFLOW__CELERY__BROKER_URL: redis://redis:6379/0
+      AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://${POSTGRES_USER:-airflow}:${POSTGRES_PASSWORD:-airflow}@postgres:5432/${POSTGRES_DB:-airflow}
+      AIRFLOW__CELERY__WORKER_CONCURRENCY: 1
+      AIRFLOW__CELERY__WORKER_PREFETCH_MULTIPLIER: 1
+      AIRFLOW_UID: ${AIRFLOW_UID:-50000}
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+      - ./airflow/logs:/opt/airflow/logs
+      - ./airflow/plugins:/opt/airflow/plugins
+      - ./airflow/config:/opt/airflow/config
+      - airflow-auth:/opt/airflow/auth
+      - ./:/opt/project:ro
+    entrypoint: /bin/bash
+    command:
+      - -c
+      - |
+        until getent hosts postgres >/dev/null 2>&1; do sleep 2; done
+        until getent hosts redis >/dev/null 2>&1; do sleep 2; done
+        exec airflow celery worker -H airflow_worker_2@%h -c 1
+
+  airflow-worker-3:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ${AIRFLOW_IMAGE_NAME:-airflow-dbt-local-1000-models:latest}
+    container_name: airflow_worker_3
+    depends_on:
+      airflow-init:
+        condition: service_completed_successfully
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      AIRFLOW__CORE__EXECUTOR: CeleryExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${POSTGRES_USER:-airflow}:${POSTGRES_PASSWORD:-airflow}@postgres:5432/${POSTGRES_DB:-airflow}
+      AIRFLOW_CONN_POSTGRES_DBT: postgresql://${POSTGRES_USER:-airflow}:${POSTGRES_PASSWORD:-airflow}@postgres:5432/analytics
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      AIRFLOW__CORE__EXECUTION_API_SERVER_URL: http://airflow_api_server:8080/execution/
+      AIRFLOW__API_AUTH__JWT_SECRET: airflow-execution-jwt-secret
+      AIRFLOW__CORE__SIMPLE_AUTH_MANAGER_PASSWORDS_FILE: /opt/airflow/auth/simple_auth_manager_passwords.json
+      AIRFLOW__CELERY__BROKER_URL: redis://redis:6379/0
+      AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://${POSTGRES_USER:-airflow}:${POSTGRES_PASSWORD:-airflow}@postgres:5432/${POSTGRES_DB:-airflow}
+      AIRFLOW__CELERY__WORKER_CONCURRENCY: 1
+      AIRFLOW__CELERY__WORKER_PREFETCH_MULTIPLIER: 1
+      AIRFLOW_UID: ${AIRFLOW_UID:-50000}
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+      - ./airflow/logs:/opt/airflow/logs
+      - ./airflow/plugins:/opt/airflow/plugins
+      - ./airflow/config:/opt/airflow/config
+      - airflow-auth:/opt/airflow/auth
+      - ./:/opt/project:ro
+    entrypoint: /bin/bash
+    command:
+      - -c
+      - |
+        until getent hosts postgres >/dev/null 2>&1; do sleep 2; done
+        until getent hosts redis >/dev/null 2>&1; do sleep 2; done
+        exec airflow celery worker -H airflow_worker_3@%h -c 1
+
+  airflow-worker-4:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ${AIRFLOW_IMAGE_NAME:-airflow-dbt-local-1000-models:latest}
+    container_name: airflow_worker_4
+    depends_on:
+      airflow-init:
+        condition: service_completed_successfully
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      AIRFLOW__CORE__EXECUTOR: CeleryExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${POSTGRES_USER:-airflow}:${POSTGRES_PASSWORD:-airflow}@postgres:5432/${POSTGRES_DB:-airflow}
+      AIRFLOW_CONN_POSTGRES_DBT: postgresql://${POSTGRES_USER:-airflow}:${POSTGRES_PASSWORD:-airflow}@postgres:5432/analytics
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      AIRFLOW__CORE__EXECUTION_API_SERVER_URL: http://airflow_api_server:8080/execution/
+      AIRFLOW__API_AUTH__JWT_SECRET: airflow-execution-jwt-secret
+      AIRFLOW__CORE__SIMPLE_AUTH_MANAGER_PASSWORDS_FILE: /opt/airflow/auth/simple_auth_manager_passwords.json
+      AIRFLOW__CELERY__BROKER_URL: redis://redis:6379/0
+      AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://${POSTGRES_USER:-airflow}:${POSTGRES_PASSWORD:-airflow}@postgres:5432/${POSTGRES_DB:-airflow}
+      AIRFLOW__CELERY__WORKER_CONCURRENCY: 1
+      AIRFLOW__CELERY__WORKER_PREFETCH_MULTIPLIER: 1
+      AIRFLOW_UID: ${AIRFLOW_UID:-50000}
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+      - ./airflow/logs:/opt/airflow/logs
+      - ./airflow/plugins:/opt/airflow/plugins
+      - ./airflow/config:/opt/airflow/config
+      - airflow-auth:/opt/airflow/auth
+      - ./:/opt/project:ro
+    entrypoint: /bin/bash
+    command:
+      - -c
+      - |
+        until getent hosts postgres >/dev/null 2>&1; do sleep 2; done
+        until getent hosts redis >/dev/null 2>&1; do sleep 2; done
+        exec airflow celery worker -H airflow_worker_4@%h -c 1
+
+volumes:
+  postgres-data:
+  airflow-auth:

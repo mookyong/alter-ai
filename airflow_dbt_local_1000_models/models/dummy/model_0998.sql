@@ -1,0 +1,7 @@
+{{ config(tags=['monthly', 'marketing', 'marketing_event_marketing']) }}
+with parent as (
+    select * from {{ ref('model_0994') }}
+)
+
+select dummy_id + 1 as dummy_id
+from parent
