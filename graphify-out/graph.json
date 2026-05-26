@@ -56,180 +56,180 @@
       "file_type": "code",
       "source_file": "models/marts/dim_customers.sql",
       "source_location": null,
-      "id": "models_marts_dim_customers_sql",
-      "community": 1,
-      "norm_label": "dim_customers.sql"
+      "community": 0,
+      "norm_label": "dim_customers.sql",
+      "id": "models_marts_dim_customers_sql"
     },
     {
       "label": "fct_orders.sql",
       "file_type": "code",
       "source_file": "models/marts/fct_orders.sql",
       "source_location": null,
-      "id": "models_marts_fct_orders_sql",
-      "community": 1,
-      "norm_label": "fct_orders.sql"
+      "community": 0,
+      "norm_label": "fct_orders.sql",
+      "id": "models_marts_fct_orders_sql"
     },
     {
       "label": "stg_orders.sql",
       "file_type": "code",
       "source_file": "models/staging/stg_orders.sql",
       "source_location": null,
-      "id": "models_staging_stg_orders_sql",
-      "community": 1,
-      "norm_label": "stg_orders.sql"
+      "community": 0,
+      "norm_label": "stg_orders.sql",
+      "id": "models_staging_stg_orders_sql"
     },
     {
       "label": "stg_payments.sql",
       "file_type": "code",
       "source_file": "models/staging/stg_payments.sql",
       "source_location": null,
-      "id": "models_staging_stg_payments_sql",
-      "community": 6,
-      "norm_label": "stg_payments.sql"
+      "community": 0,
+      "norm_label": "stg_payments.sql",
+      "id": "models_staging_stg_payments_sql"
     },
     {
       "label": "stg_customers.sql",
       "file_type": "code",
       "source_file": "models/staging/stg_customers.sql",
       "source_location": null,
-      "id": "models_staging_stg_customers_sql",
-      "community": 1,
-      "norm_label": "stg_customers.sql"
+      "community": 0,
+      "norm_label": "stg_customers.sql",
+      "id": "models_staging_stg_customers_sql"
     },
     {
       "label": "settings.json",
       "file_type": "code",
       "source_file": ".vscode/settings.json",
       "source_location": "L1",
-      "id": "vscode_settings_json",
-      "community": 0,
-      "norm_label": "settings.json"
+      "community": 1,
+      "norm_label": "settings.json",
+      "id": "vscode_settings_json"
     },
     {
       "label": "workbench.editorAssociations",
       "file_type": "code",
       "source_file": ".vscode/settings.json",
       "source_location": "L2",
-      "id": "vscode_settings_workbench_editorassociations",
-      "community": 0,
-      "norm_label": "workbench.editorassociations"
+      "community": 1,
+      "norm_label": "workbench.editorassociations",
+      "id": "vscode_settings_workbench_editorassociations"
     },
     {
       "label": "*.copilotmd",
       "file_type": "code",
       "source_file": ".vscode/settings.json",
       "source_location": "L3",
-      "id": "vscode_settings_workbench_editorassociations_copilotmd",
-      "community": 0,
-      "norm_label": "*.copilotmd"
+      "community": 1,
+      "norm_label": "*.copilotmd",
+      "id": "vscode_settings_workbench_editorassociations_copilotmd"
     },
     {
       "label": "*.parquet",
       "file_type": "code",
       "source_file": ".vscode/settings.json",
       "source_location": "L4",
-      "id": "vscode_settings_workbench_editorassociations_parquet",
-      "community": 0,
-      "norm_label": "*.parquet"
+      "community": 1,
+      "norm_label": "*.parquet",
+      "id": "vscode_settings_workbench_editorassociations_parquet"
     },
     {
       "label": "*.csv",
       "file_type": "code",
       "source_file": ".vscode/settings.json",
       "source_location": "L5",
-      "id": "vscode_settings_workbench_editorassociations_csv",
-      "community": 0,
-      "norm_label": "*.csv"
+      "community": 1,
+      "norm_label": "*.csv",
+      "id": "vscode_settings_workbench_editorassociations_csv"
     },
     {
       "label": "*.tsv",
       "file_type": "code",
       "source_file": ".vscode/settings.json",
       "source_location": "L6",
-      "id": "vscode_settings_workbench_editorassociations_tsv",
-      "community": 0,
-      "norm_label": "*.tsv"
+      "community": 1,
+      "norm_label": "*.tsv",
+      "id": "vscode_settings_workbench_editorassociations_tsv"
     },
     {
       "label": "*.xlsx",
       "file_type": "code",
       "source_file": ".vscode/settings.json",
       "source_location": "L7",
-      "id": "vscode_settings_workbench_editorassociations_xlsx",
-      "community": 0,
-      "norm_label": "*.xlsx"
+      "community": 1,
+      "norm_label": "*.xlsx",
+      "id": "vscode_settings_workbench_editorassociations_xlsx"
     },
     {
       "label": "package.json",
       "file_type": "code",
       "source_file": ".opencode/package.json",
       "source_location": "L1",
-      "id": "opencode_package_json",
-      "community": 5,
-      "norm_label": "package.json"
+      "community": 4,
+      "norm_label": "package.json",
+      "id": "opencode_package_json"
     },
     {
       "label": "dependencies",
       "file_type": "code",
       "source_file": ".opencode/package.json",
       "source_location": "L2",
-      "id": "opencode_package_dependencies",
-      "community": 5,
-      "norm_label": "dependencies"
+      "community": 4,
+      "norm_label": "dependencies",
+      "id": "opencode_package_dependencies"
     },
     {
       "label": "@opencode-ai/plugin",
       "file_type": "code",
       "source_file": ".opencode/package.json",
       "source_location": "L3",
-      "id": "opencode_package_dependencies_opencode_ai_plugin",
-      "community": 5,
-      "norm_label": "@opencode-ai/plugin"
+      "community": 4,
+      "norm_label": "@opencode-ai/plugin",
+      "id": "opencode_package_dependencies_opencode_ai_plugin"
     },
     {
       "label": "opencode.json",
       "file_type": "code",
       "source_file": ".opencode/opencode.json",
       "source_location": "L1",
-      "id": "opencode_opencode_json",
-      "community": 3,
-      "norm_label": "opencode.json"
+      "community": 5,
+      "norm_label": "opencode.json",
+      "id": "opencode_opencode_json"
     },
     {
       "label": "$schema",
       "file_type": "code",
       "source_file": ".opencode/opencode.json",
       "source_location": "L2",
-      "id": "opencode_opencode_schema",
-      "community": 3,
-      "norm_label": "$schema"
+      "community": 5,
+      "norm_label": "$schema",
+      "id": "opencode_opencode_schema"
     },
     {
       "label": "plugin",
       "file_type": "code",
       "source_file": ".opencode/opencode.json",
       "source_location": "L3",
-      "id": "opencode_opencode_plugin",
-      "community": 3,
-      "norm_label": "plugin"
+      "community": 5,
+      "norm_label": "plugin",
+      "id": "opencode_opencode_plugin"
     },
     {
       "label": "graphify.js",
       "file_type": "code",
       "source_file": ".opencode/plugins/graphify.js",
       "source_location": "L1",
-      "id": "opencode_plugins_graphify_js",
-      "community": 4,
-      "norm_label": "graphify.js"
+      "community": 3,
+      "norm_label": "graphify.js",
+      "id": "opencode_plugins_graphify_js"
     },
     {
       "label": "GraphifyPlugin()",
       "file_type": "code",
       "source_file": ".opencode/plugins/graphify.js",
       "source_location": "L6",
-      "id": "plugins_graphify_graphifyplugin",
-      "community": 4,
-      "norm_label": "graphifyplugin()"
+      "community": 3,
+      "norm_label": "graphifyplugin()",
+      "id": "plugins_graphify_graphifyplugin"
     },
     {
       "label": "Raw Customers Source",
@@ -240,9 +240,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "raw_customers_source",
-      "community": 1,
-      "norm_label": "raw customers source"
+      "community": 0,
+      "norm_label": "raw customers source",
+      "id": "raw_customers_source"
     },
     {
       "label": "Raw Orders Source",
@@ -253,9 +253,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "raw_orders_source",
-      "community": 1,
-      "norm_label": "raw orders source"
+      "community": 0,
+      "norm_label": "raw orders source",
+      "id": "raw_orders_source"
     },
     {
       "label": "Raw Payments Source",
@@ -266,9 +266,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "raw_payments_source",
-      "community": 6,
-      "norm_label": "raw payments source"
+      "community": 0,
+      "norm_label": "raw payments source",
+      "id": "raw_payments_source"
     },
     {
       "label": "Staging Layer",
@@ -279,9 +279,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "dbt_staging_layer",
       "community": 2,
-      "norm_label": "staging layer"
+      "norm_label": "staging layer",
+      "id": "dbt_staging_layer"
     },
     {
       "label": "Marts Layer",
@@ -292,9 +292,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "dbt_marts_layer",
       "community": 2,
-      "norm_label": "marts layer"
+      "norm_label": "marts layer",
+      "id": "dbt_marts_layer"
     },
     {
       "label": "dbt Project Configuration",
@@ -305,9 +305,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "dbt_project_configuration",
       "community": 2,
-      "norm_label": "dbt project configuration"
+      "norm_label": "dbt project configuration",
+      "id": "dbt_project_configuration"
     },
     {
       "label": "DuckDB Dev Profile",
@@ -318,9 +318,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "duckdb_dev_profile",
       "community": 2,
-      "norm_label": "duckdb dev profile"
+      "norm_label": "duckdb dev profile",
+      "id": "duckdb_dev_profile"
     },
     {
       "label": "Column Test Suite",
@@ -331,9 +331,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "column_test_suite",
-      "community": 1,
-      "norm_label": "column test suite"
+      "community": 0,
+      "norm_label": "column test suite",
+      "id": "column_test_suite"
     },
     {
       "label": "OpenCode Plugin Config",
@@ -344,9 +344,22 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "opencode_plugin_config",
-      "community": 4,
-      "norm_label": "opencode plugin config"
+      "community": 3,
+      "norm_label": "opencode plugin config",
+      "id": "opencode_plugin_config"
+    },
+    {
+      "label": "Graphify + dbt Demo Setup",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "norm_label": "graphify + dbt demo setup",
+      "community": 0,
+      "id": "readme_graphify_dbt_demo"
     }
   ],
   "links": [
@@ -377,8 +390,18 @@
       "source_file": "models/schema.yml",
       "source_location": "models[3].name: dim_customers",
       "weight": 1.0,
-      "source": "column_test_suite",
-      "target": "models_marts_dim_customers_sql"
+      "source": "models_marts_dim_customers_sql",
+      "target": "column_test_suite"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "## 6. Graphify \uacb0\uacfc \uae30\uc900 lineage",
+      "weight": 1.0,
+      "source": "models_marts_dim_customers_sql",
+      "target": "readme_graphify_dbt_demo"
     },
     {
       "relation": "references",
@@ -407,8 +430,18 @@
       "source_file": "models/schema.yml",
       "source_location": "models[2].name: fct_orders",
       "weight": 1.0,
-      "source": "column_test_suite",
-      "target": "models_marts_fct_orders_sql"
+      "source": "models_marts_fct_orders_sql",
+      "target": "column_test_suite"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "## 6. Graphify \uacb0\uacfc \uae30\uc900 lineage",
+      "weight": 1.0,
+      "source": "models_marts_fct_orders_sql",
+      "target": "readme_graphify_dbt_demo"
     },
     {
       "relation": "references",
@@ -427,8 +460,18 @@
       "source_file": "models/schema.yml",
       "source_location": "models[1].name: stg_orders",
       "weight": 1.0,
-      "source": "column_test_suite",
-      "target": "models_staging_stg_orders_sql"
+      "source": "models_staging_stg_orders_sql",
+      "target": "column_test_suite"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "## 6. Graphify \uacb0\uacfc \uae30\uc900 lineage",
+      "weight": 1.0,
+      "source": "models_staging_stg_orders_sql",
+      "target": "readme_graphify_dbt_demo"
     },
     {
       "relation": "references",
@@ -439,6 +482,16 @@
       "weight": 1.0,
       "source": "models_staging_stg_payments_sql",
       "target": "raw_payments_source"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "## 6. Graphify \uacb0\uacfc \uae30\uc900 lineage",
+      "weight": 1.0,
+      "source": "models_staging_stg_payments_sql",
+      "target": "readme_graphify_dbt_demo"
     },
     {
       "relation": "references",
@@ -457,8 +510,18 @@
       "source_file": "models/schema.yml",
       "source_location": "models[0].name: stg_customers",
       "weight": 1.0,
-      "source": "column_test_suite",
-      "target": "models_staging_stg_customers_sql"
+      "source": "models_staging_stg_customers_sql",
+      "target": "column_test_suite"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "## 6. Graphify \uacb0\uacfc \uae30\uc900 lineage",
+      "weight": 1.0,
+      "source": "models_staging_stg_customers_sql",
+      "target": "readme_graphify_dbt_demo"
     },
     {
       "relation": "contains",
@@ -466,9 +529,9 @@
       "source_file": ".vscode/settings.json",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "vscode_settings_json",
-      "target": "vscode_settings_workbench_editorassociations",
-      "confidence_score": 1.0
+      "target": "vscode_settings_workbench_editorassociations"
     },
     {
       "relation": "contains",
@@ -476,9 +539,9 @@
       "source_file": ".vscode/settings.json",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "vscode_settings_workbench_editorassociations",
-      "target": "vscode_settings_workbench_editorassociations_copilotmd",
-      "confidence_score": 1.0
+      "target": "vscode_settings_workbench_editorassociations_copilotmd"
     },
     {
       "relation": "contains",
@@ -486,9 +549,9 @@
       "source_file": ".vscode/settings.json",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "vscode_settings_workbench_editorassociations",
-      "target": "vscode_settings_workbench_editorassociations_parquet",
-      "confidence_score": 1.0
+      "target": "vscode_settings_workbench_editorassociations_parquet"
     },
     {
       "relation": "contains",
@@ -496,9 +559,9 @@
       "source_file": ".vscode/settings.json",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "vscode_settings_workbench_editorassociations",
-      "target": "vscode_settings_workbench_editorassociations_csv",
-      "confidence_score": 1.0
+      "target": "vscode_settings_workbench_editorassociations_csv"
     },
     {
       "relation": "contains",
@@ -506,9 +569,9 @@
       "source_file": ".vscode/settings.json",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "vscode_settings_workbench_editorassociations",
-      "target": "vscode_settings_workbench_editorassociations_tsv",
-      "confidence_score": 1.0
+      "target": "vscode_settings_workbench_editorassociations_tsv"
     },
     {
       "relation": "contains",
@@ -516,9 +579,9 @@
       "source_file": ".vscode/settings.json",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "vscode_settings_workbench_editorassociations",
-      "target": "vscode_settings_workbench_editorassociations_xlsx",
-      "confidence_score": 1.0
+      "target": "vscode_settings_workbench_editorassociations_xlsx"
     },
     {
       "relation": "contains",
@@ -526,9 +589,9 @@
       "source_file": ".opencode/package.json",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "opencode_package_json",
-      "target": "opencode_package_dependencies",
-      "confidence_score": 1.0
+      "target": "opencode_package_dependencies"
     },
     {
       "relation": "contains",
@@ -536,9 +599,9 @@
       "source_file": ".opencode/package.json",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "opencode_package_dependencies",
-      "target": "opencode_package_dependencies_opencode_ai_plugin",
-      "confidence_score": 1.0
+      "target": "opencode_package_dependencies_opencode_ai_plugin"
     },
     {
       "relation": "contains",
@@ -546,9 +609,9 @@
       "source_file": ".opencode/opencode.json",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "opencode_opencode_json",
-      "target": "opencode_opencode_schema",
-      "confidence_score": 1.0
+      "target": "opencode_opencode_schema"
     },
     {
       "relation": "contains",
@@ -556,9 +619,9 @@
       "source_file": ".opencode/opencode.json",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "opencode_opencode_json",
-      "target": "opencode_opencode_plugin",
-      "confidence_score": 1.0
+      "target": "opencode_opencode_plugin"
     },
     {
       "relation": "contains",
@@ -566,9 +629,9 @@
       "source_file": ".opencode/plugins/graphify.js",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "opencode_plugins_graphify_js",
-      "target": "plugins_graphify_graphifyplugin",
-      "confidence_score": 1.0
+      "target": "plugins_graphify_graphifyplugin"
     },
     {
       "relation": "references",
@@ -577,8 +640,8 @@
       "source_file": ".opencode/opencode.json",
       "source_location": "plugin[0]: .opencode/plugins/graphify.js",
       "weight": 1.0,
-      "source": "opencode_plugin_config",
-      "target": "opencode_plugins_graphify_js"
+      "source": "opencode_plugins_graphify_js",
+      "target": "opencode_plugin_config"
     },
     {
       "relation": "implements",
@@ -587,8 +650,8 @@
       "source_file": "dbt_project.yml",
       "source_location": "models.jaffle_graphify.staging.+materialized: view",
       "weight": 1.0,
-      "source": "dbt_project_configuration",
-      "target": "dbt_staging_layer"
+      "source": "dbt_staging_layer",
+      "target": "dbt_project_configuration"
     },
     {
       "relation": "implements",
@@ -597,8 +660,8 @@
       "source_file": "dbt_project.yml",
       "source_location": "models.jaffle_graphify.marts.+materialized: table",
       "weight": 1.0,
-      "source": "dbt_project_configuration",
-      "target": "dbt_marts_layer"
+      "source": "dbt_marts_layer",
+      "target": "dbt_project_configuration"
     },
     {
       "relation": "references",
@@ -609,6 +672,26 @@
       "weight": 1.0,
       "source": "dbt_project_configuration",
       "target": "duckdb_dev_profile"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "## 6. Graphify \uacb0\uacfc \uae30\uc900 lineage",
+      "weight": 1.0,
+      "source": "dbt_project_configuration",
+      "target": "readme_graphify_dbt_demo"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "## 4. Graphify \uc124\uce58 \ubc0f \uac80\uc99d",
+      "weight": 1.0,
+      "source": "opencode_plugin_config",
+      "target": "readme_graphify_dbt_demo"
     }
   ],
   "hyperedges": [
@@ -657,5 +740,6 @@
       "confidence_score": 0.84,
       "source_file": "models/schema.yml"
     }
-  ]
+  ],
+  "built_at_commit": "673b39ff939309c4fef5372bc642f0624946aa80"
 }

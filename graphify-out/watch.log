@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "/home/dharma6872/miniconda3/envs/graphify-dbt/lib/python3.12/site-packages/graphify/watch.py", line 674, in watch
+    from watchdog.observers import Observer
+ModuleNotFoundError: No module named 'watchdog'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/dharma6872/miniconda3/envs/graphify-dbt/lib/python3.12/site-packages/graphify/watch.py", line 755, in <module>
+    watch(Path(args.path), debounce=args.debounce)
+  File "/home/dharma6872/miniconda3/envs/graphify-dbt/lib/python3.12/site-packages/graphify/watch.py", line 678, in watch
+    raise ImportError("watchdog not installed. Run: pip install watchdog") from e
+ImportError: watchdog not installed. Run: pip install watchdog
