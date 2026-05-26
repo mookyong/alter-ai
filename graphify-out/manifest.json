@@ -65,8 +65,23 @@
     "semantic_hash": "887ade9e4a58d86705cf83b627ae13cd"
   },
   "/home/dharma6872/workspace/test/graphify-dbt-demo/jaffle_graphify/README.md": {
-    "mtime": 1779755771.4461572,
-    "ast_hash": "f17e8e187f8686781de0a35d0ab7a406",
+    "mtime": 1779810610.7307014,
+    "ast_hash": "e7135e4d8cd7771e532a1eb6191c7ca1",
+    "semantic_hash": ""
+  },
+  "/home/dharma6872/workspace/test/graphify-dbt-demo/jaffle_graphify/.opencode.json": {
+    "mtime": 1779757630.5942433,
+    "ast_hash": "0f4b85cb304f73241d83696059f4af88",
+    "semantic_hash": ""
+  },
+  "/home/dharma6872/workspace/test/graphify-dbt-demo/jaffle_graphify/opencode.json": {
+    "mtime": 1779810045.680913,
+    "ast_hash": "c70ee3319a462faa268023b3d5ab5ee4",
+    "semantic_hash": ""
+  },
+  "/home/dharma6872/workspace/test/graphify-dbt-demo/jaffle_graphify/AGENTS.md": {
+    "mtime": 1779757675.7318275,
+    "ast_hash": "f958ec4c7420f4a7ac9aea5567a46ef1",
     "semantic_hash": ""
   }
 }
