@@ -1,0 +1,67 @@
+{
+  "/home/dharma6872/workspace/test/graphify-dbt-demo/jaffle_graphify/models/marts/dim_customers.sql": {
+    "mtime": 1779752673.7370405,
+    "ast_hash": "b95775775d7fc7c4729f32a218cfbed2",
+    "semantic_hash": "b95775775d7fc7c4729f32a218cfbed2"
+  },
+  "/home/dharma6872/workspace/test/graphify-dbt-demo/jaffle_graphify/models/marts/fct_orders.sql": {
+    "mtime": 1779752537.3789792,
+    "ast_hash": "27782786ebdc63db1e171be7848f700d",
+    "semantic_hash": "27782786ebdc63db1e171be7848f700d"
+  },
+  "/home/dharma6872/workspace/test/graphify-dbt-demo/jaffle_graphify/models/staging/stg_orders.sql": {
+    "mtime": 1779752476.486528,
+    "ast_hash": "c17a34c9637d7c4bc901b540c312acfc",
+    "semantic_hash": "c17a34c9637d7c4bc901b540c312acfc"
+  },
+  "/home/dharma6872/workspace/test/graphify-dbt-demo/jaffle_graphify/models/staging/stg_payments.sql": {
+    "mtime": 1779752483.0231237,
+    "ast_hash": "7b8ff6f2bccd590c73eef148ab7032e8",
+    "semantic_hash": "7b8ff6f2bccd590c73eef148ab7032e8"
+  },
+  "/home/dharma6872/workspace/test/graphify-dbt-demo/jaffle_graphify/models/staging/stg_customers.sql": {
+    "mtime": 1779752471.3788223,
+    "ast_hash": "3c5cbaf8486077c3c84d0b1d8a7dcf62",
+    "semantic_hash": "3c5cbaf8486077c3c84d0b1d8a7dcf62"
+  },
+  "/home/dharma6872/workspace/test/graphify-dbt-demo/jaffle_graphify/.vscode/settings.json": {
+    "mtime": 1779752240.0043924,
+    "ast_hash": "e5de88ab515c16616130056d1a3c6233",
+    "semantic_hash": "e5de88ab515c16616130056d1a3c6233"
+  },
+  "/home/dharma6872/workspace/test/graphify-dbt-demo/jaffle_graphify/.opencode/package.json": {
+    "mtime": 1779753165.5673108,
+    "ast_hash": "7dff5e4304b769688c066f39533fc8e5",
+    "semantic_hash": "7dff5e4304b769688c066f39533fc8e5"
+  },
+  "/home/dharma6872/workspace/test/graphify-dbt-demo/jaffle_graphify/.opencode/opencode.json": {
+    "mtime": 1779753160.1918056,
+    "ast_hash": "e5f74d14a81702b55bdf53b33ec991d7",
+    "semantic_hash": "e5f74d14a81702b55bdf53b33ec991d7"
+  },
+  "/home/dharma6872/workspace/test/graphify-dbt-demo/jaffle_graphify/.opencode/plugins/graphify.js": {
+    "mtime": 1779752829.920846,
+    "ast_hash": "64ccd3c03dbfe0980b6095766f5c4e52",
+    "semantic_hash": "64ccd3c03dbfe0980b6095766f5c4e52"
+  },
+  "/home/dharma6872/workspace/test/graphify-dbt-demo/jaffle_graphify/dbt_project.yml": {
+    "mtime": 1779752291.2754054,
+    "ast_hash": "a102c0491918269dbd1e2e158a3ff73a",
+    "semantic_hash": "a102c0491918269dbd1e2e158a3ff73a"
+  },
+  "/home/dharma6872/workspace/test/graphify-dbt-demo/jaffle_graphify/profiles.yml": {
+    "mtime": 1779752356.4053597,
+    "ast_hash": "2f5ae7a8a3d127538f4df937bf3d7db6",
+    "semantic_hash": "2f5ae7a8a3d127538f4df937bf3d7db6"
+  },
+  "/home/dharma6872/workspace/test/graphify-dbt-demo/jaffle_graphify/.user.yml": {
+    "mtime": 1779752721.485838,
+    "ast_hash": "6920734e75353e5d42ccd2cd0162fa8d",
+    "semantic_hash": "6920734e75353e5d42ccd2cd0162fa8d"
+  },
+  "/home/dharma6872/workspace/test/graphify-dbt-demo/jaffle_graphify/models/schema.yml": {
+    "mtime": 1779752617.2492447,
+    "ast_hash": "887ade9e4a58d86705cf83b627ae13cd",
+    "semantic_hash": "887ade9e4a58d86705cf83b627ae13cd"
+  }
+}

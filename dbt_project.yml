@@ -1,0 +1,25 @@
+name: 'jaffle_graphify'
+version: '1.0.0'
+config-version: 2
+
+profile: 'jaffle_graphify'
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  jaffle_graphify:
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table
+
+seeds:
+  jaffle_graphify:
+    +quote_columns: false

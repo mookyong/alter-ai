@@ -1,0 +1,8 @@
+jaffle_graphify:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: ./jaffle_graphify.duckdb
+      schema: main
+      threads: 4

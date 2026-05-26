@@ -1,0 +1,1144 @@
+[0m08:45:21.490583 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9efb9e02f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9ef8c89550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9ef8944c20>]}
+
+
+============================== 08:45:21.493611 | c33f69d8-ec01-45f5-ae65-28d78614d03c ==============================
+[0m08:45:21.493611 [info ] [MainThread]: Running with dbt=1.11.11
+[0m08:45:21.493925 [debug] [MainThread]: running dbt with arguments {'introspect': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'write_json': 'True', 'static_parser': 'True', 'invocation_command': 'dbt debug', 'debug': 'False', 'quiet': 'False', 'indirect_selection': 'eager', 'send_anonymous_usage_stats': 'True', 'log_path': '/home/dharma6872/workspace/test/graphify-dbt-demo/jaffle_graphify/logs', 'target_path': 'None', 'empty': 'None', 'partial_parse': 'True', 'no_print': 'None', 'profiles_dir': '/home/dharma6872/workspace/test/graphify-dbt-demo/jaffle_graphify', 'use_experimental_parser': 'False', 'log_cache_events': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'log_format': 'default', 'use_colors': 'True', 'fail_fast': 'False'}
+[0m08:45:21.502330 [info ] [MainThread]: dbt version: 1.11.11
+[0m08:45:21.502596 [info ] [MainThread]: python version: 3.12.13
+[0m08:45:21.502765 [info ] [MainThread]: python path: /home/dharma6872/miniconda3/envs/graphify-dbt/bin/python3.12
+[0m08:45:21.502919 [info ] [MainThread]: os info: Linux-6.6.114.1-microsoft-standard-WSL2-x86_64-with-glibc2.39
+[0m08:45:21.619220 [info ] [MainThread]: Using profiles dir at /home/dharma6872/workspace/test/graphify-dbt-demo/jaffle_graphify
+[0m08:45:21.619498 [info ] [MainThread]: Using profiles.yml file at /home/dharma6872/workspace/test/graphify-dbt-demo/jaffle_graphify/profiles.yml
+[0m08:45:21.619664 [info ] [MainThread]: Using dbt_project.yml file at /home/dharma6872/workspace/test/graphify-dbt-demo/jaffle_graphify/dbt_project.yml
+[0m08:45:21.620674 [info ] [MainThread]: adapter type: duckdb
+[0m08:45:21.620886 [info ] [MainThread]: adapter version: 1.10.1
+[0m08:45:21.673879 [info ] [MainThread]: Configuration:
+[0m08:45:21.674165 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m08:45:21.674372 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m08:45:21.674546 [info ] [MainThread]: Required dependencies:
+[0m08:45:21.674722 [debug] [MainThread]: Executing "git --help"
+[0m08:45:21.676443 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m08:45:21.676665 [debug] [MainThread]: STDERR: "b''"
+[0m08:45:21.676808 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m08:45:21.676971 [info ] [MainThread]: Connection:
+[0m08:45:21.677137 [info ] [MainThread]:   database: jaffle_graphify
+[0m08:45:21.677288 [info ] [MainThread]:   schema: main
+[0m08:45:21.677422 [info ] [MainThread]:   path: ./jaffle_graphify.duckdb
+[0m08:45:21.677559 [info ] [MainThread]:   config_options: None
+[0m08:45:21.677691 [info ] [MainThread]:   extensions: None
+[0m08:45:21.677829 [info ] [MainThread]:   settings: {}
+[0m08:45:21.677962 [info ] [MainThread]:   external_root: .
+[0m08:45:21.678091 [info ] [MainThread]:   use_credential_provider: None
+[0m08:45:21.678258 [info ] [MainThread]:   attach: None
+[0m08:45:21.678386 [info ] [MainThread]:   filesystems: None
+[0m08:45:21.678633 [info ] [MainThread]:   remote: None
+[0m08:45:21.678808 [info ] [MainThread]:   plugins: None
+[0m08:45:21.678954 [info ] [MainThread]:   disable_transactions: False
+[0m08:45:21.679207 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m08:45:21.711848 [debug] [MainThread]: Acquiring new duckdb connection 'debug'
+[0m08:45:21.724926 [debug] [MainThread]: Using duckdb connection "debug"
+[0m08:45:21.725148 [debug] [MainThread]: On debug: select 1 as id
+[0m08:45:21.725297 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m08:45:21.741720 [debug] [MainThread]: SQL status: OK in 0.016 seconds
+[0m08:45:21.742238 [debug] [MainThread]: On debug: Close
+[0m08:45:21.742476 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m08:45:21.742677 [info ] [MainThread]: [32mAll checks passed![0m
+[0m08:45:21.743614 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 0.28684217, "process_in_blocks": "189216", "process_kernel_time": 0.15375, "process_mem_max_rss": "147460", "process_out_blocks": "48", "process_user_time": 0.890135}
+[0m08:45:21.743867 [debug] [MainThread]: Command `dbt debug` succeeded at 08:45:21.743812 after 0.29 seconds
+[0m08:45:21.744024 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m08:45:21.744198 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9efa59f170>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9ef84095b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9ef84be300>]}
+[0m08:45:21.744401 [debug] [MainThread]: Flushing usage events
+[0m08:45:22.549268 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m08:45:29.651947 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7014d0e4f020>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7014d00c5e50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7014d033fec0>]}
+
+
+============================== 08:45:29.653927 | 10dec1f1-bfdc-441c-9bbc-073881bc25e8 ==============================
+[0m08:45:29.653927 [info ] [MainThread]: Running with dbt=1.11.11
+[0m08:45:29.654248 [debug] [MainThread]: running dbt with arguments {'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'warn_error': 'None', 'partial_parse': 'True', 'profiles_dir': '/home/dharma6872/workspace/test/graphify-dbt-demo/jaffle_graphify', 'introspect': 'True', 'static_parser': 'True', 'indirect_selection': 'eager', 'log_format': 'default', 'use_experimental_parser': 'False', 'quiet': 'False', 'cache_selected_only': 'False', 'empty': 'None', 'fail_fast': 'False', 'printer_width': '80', 'invocation_command': 'dbt seed', 'send_anonymous_usage_stats': 'True', 'no_print': 'None', 'use_colors': 'True', 'target_path': 'None', 'log_path': '/home/dharma6872/workspace/test/graphify-dbt-demo/jaffle_graphify/logs', 'write_json': 'True', 'debug': 'False', 'version_check': 'True', 'log_cache_events': 'False'}
+[0m08:45:29.809901 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '10dec1f1-bfdc-441c-9bbc-073881bc25e8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7014d2bf3a40>]}
+[0m08:45:29.845062 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '10dec1f1-bfdc-441c-9bbc-073881bc25e8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7014cfe7a990>]}
+[0m08:45:29.846046 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m08:45:29.884139 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m08:45:29.884513 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m08:45:29.884718 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '10dec1f1-bfdc-441c-9bbc-073881bc25e8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7014be0d5250>]}
+[0m08:45:30.636250 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '10dec1f1-bfdc-441c-9bbc-073881bc25e8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x701484127ec0>]}
+[0m08:45:30.681723 [debug] [MainThread]: Wrote artifact WritableManifest to /home/dharma6872/workspace/test/graphify-dbt-demo/jaffle_graphify/target/manifest.json
+[0m08:45:30.683080 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/dharma6872/workspace/test/graphify-dbt-demo/jaffle_graphify/target/semantic_manifest.json
+[0m08:45:30.689690 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '10dec1f1-bfdc-441c-9bbc-073881bc25e8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70145e884f50>]}
+[0m08:45:30.689950 [info ] [MainThread]: Found 5 models, 3 seeds, 9 data tests, 485 macros
+[0m08:45:30.690145 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '10dec1f1-bfdc-441c-9bbc-073881bc25e8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7014841126f0>]}
+[0m08:45:30.691212 [info ] [MainThread]: 
+[0m08:45:30.691503 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m08:45:30.691677 [info ] [MainThread]: 
+[0m08:45:30.692095 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m08:45:30.694940 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_jaffle_graphify'
+[0m08:45:30.711687 [debug] [ThreadPool]: Using duckdb connection "list_jaffle_graphify"
+[0m08:45:30.711953 [debug] [ThreadPool]: On list_jaffle_graphify: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "jaffle_graphify", "target_name": "dev", "connection_name": "list_jaffle_graphify"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"jaffle_graphify"'
+    
+  
+  
+[0m08:45:30.712117 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m08:45:30.721816 [debug] [ThreadPool]: SQL status: OK in 0.010 seconds
+[0m08:45:30.722672 [debug] [ThreadPool]: On list_jaffle_graphify: Close
+[0m08:45:30.723162 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_jaffle_graphify, now create_jaffle_graphify_main)
+[0m08:45:30.723439 [debug] [ThreadPool]: Creating schema "database: "jaffle_graphify"
+schema: "main"
+"
+[0m08:45:30.726937 [debug] [ThreadPool]: Using duckdb connection "create_jaffle_graphify_main"
+[0m08:45:30.727134 [debug] [ThreadPool]: On create_jaffle_graphify_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "jaffle_graphify", "target_name": "dev", "connection_name": "create_jaffle_graphify_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='jaffle_graphify'
+        and type='sqlite'
+    
+  
+[0m08:45:30.727281 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m08:45:30.728227 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m08:45:30.729078 [debug] [ThreadPool]: Using duckdb connection "create_jaffle_graphify_main"
+[0m08:45:30.729275 [debug] [ThreadPool]: On create_jaffle_graphify_main: BEGIN
+[0m08:45:30.729724 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m08:45:30.729993 [debug] [ThreadPool]: Using duckdb connection "create_jaffle_graphify_main"
+[0m08:45:30.730185 [debug] [ThreadPool]: On create_jaffle_graphify_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "jaffle_graphify", "target_name": "dev", "connection_name": "create_jaffle_graphify_main"} */
+
+    
+    
+        create schema if not exists "jaffle_graphify"."main"
+    
+[0m08:45:30.730862 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m08:45:30.731281 [debug] [ThreadPool]: On create_jaffle_graphify_main: COMMIT
+[0m08:45:30.731453 [debug] [ThreadPool]: Using duckdb connection "create_jaffle_graphify_main"
+[0m08:45:30.731595 [debug] [ThreadPool]: On create_jaffle_graphify_main: COMMIT
+[0m08:45:30.731963 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m08:45:30.732126 [debug] [ThreadPool]: On create_jaffle_graphify_main: Close
+[0m08:45:30.733101 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_jaffle_graphify_main, now list_jaffle_graphify_main)
+[0m08:45:30.735882 [debug] [ThreadPool]: Using duckdb connection "list_jaffle_graphify_main"
+[0m08:45:30.736082 [debug] [ThreadPool]: On list_jaffle_graphify_main: BEGIN
+[0m08:45:30.736233 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m08:45:30.736723 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m08:45:30.736917 [debug] [ThreadPool]: Using duckdb connection "list_jaffle_graphify_main"
+[0m08:45:30.737080 [debug] [ThreadPool]: On list_jaffle_graphify_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "jaffle_graphify", "target_name": "dev", "connection_name": "list_jaffle_graphify_main"} */
+select
+      'jaffle_graphify' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'jaffle_graphify'
+  
+[0m08:45:30.740130 [debug] [ThreadPool]: SQL status: OK in 0.003 seconds
+[0m08:45:30.740730 [debug] [ThreadPool]: On list_jaffle_graphify_main: ROLLBACK
+[0m08:45:30.741724 [debug] [ThreadPool]: Failed to rollback 'list_jaffle_graphify_main'
+[0m08:45:30.741910 [debug] [ThreadPool]: On list_jaffle_graphify_main: Close
+[0m08:45:30.742270 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '10dec1f1-bfdc-441c-9bbc-073881bc25e8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7014be12c980>]}
+[0m08:45:30.742588 [debug] [MainThread]: Using duckdb connection "master"
+[0m08:45:30.742751 [debug] [MainThread]: On master: BEGIN
+[0m08:45:30.742898 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m08:45:30.743287 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m08:45:30.743459 [debug] [MainThread]: On master: COMMIT
+[0m08:45:30.743595 [debug] [MainThread]: Using duckdb connection "master"
+[0m08:45:30.743728 [debug] [MainThread]: On master: COMMIT
+[0m08:45:30.744089 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m08:45:30.744249 [debug] [MainThread]: On master: Close
+[0m08:45:30.747017 [debug] [Thread-1 (]: Began running node seed.jaffle_graphify.raw_customers
+[0m08:45:30.747280 [debug] [Thread-2 (]: Began running node seed.jaffle_graphify.raw_orders
+[0m08:45:30.747794 [debug] [Thread-3 (]: Began running node seed.jaffle_graphify.raw_payments
+[0m08:45:30.747571 [info ] [Thread-1 (]: 1 of 3 START seed file main.raw_customers ...................................... [RUN]
+[0m08:45:30.748183 [info ] [Thread-2 (]: 2 of 3 START seed file main.raw_orders ......................................... [RUN]
+[0m08:45:30.748503 [info ] [Thread-3 (]: 3 of 3 START seed file main.raw_payments ....................................... [RUN]
+[0m08:45:30.748887 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_jaffle_graphify_main, now seed.jaffle_graphify.raw_customers)
+[0m08:45:30.749248 [debug] [Thread-2 (]: Acquiring new duckdb connection 'seed.jaffle_graphify.raw_orders'
+[0m08:45:30.749558 [debug] [Thread-3 (]: Acquiring new duckdb connection 'seed.jaffle_graphify.raw_payments'
+[0m08:45:30.749803 [debug] [Thread-1 (]: Began compiling node seed.jaffle_graphify.raw_customers
+[0m08:45:30.750019 [debug] [Thread-2 (]: Began compiling node seed.jaffle_graphify.raw_orders
+[0m08:45:30.750228 [debug] [Thread-3 (]: Began compiling node seed.jaffle_graphify.raw_payments
+[0m08:45:30.750469 [debug] [Thread-1 (]: Began executing node seed.jaffle_graphify.raw_customers
+[0m08:45:30.750724 [debug] [Thread-2 (]: Began executing node seed.jaffle_graphify.raw_orders
+[0m08:45:30.750960 [debug] [Thread-3 (]: Began executing node seed.jaffle_graphify.raw_payments
+[0m08:45:30.766059 [debug] [Thread-2 (]: Using duckdb connection "seed.jaffle_graphify.raw_orders"
+[0m08:45:30.765266 [debug] [Thread-1 (]: Using duckdb connection "seed.jaffle_graphify.raw_customers"
+[0m08:45:30.767658 [debug] [Thread-2 (]: On seed.jaffle_graphify.raw_orders: BEGIN
+[0m08:45:30.768340 [debug] [Thread-3 (]: Using duckdb connection "seed.jaffle_graphify.raw_payments"
+[0m08:45:30.768623 [debug] [Thread-1 (]: On seed.jaffle_graphify.raw_customers: BEGIN
+[0m08:45:30.768851 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m08:45:30.769063 [debug] [Thread-3 (]: On seed.jaffle_graphify.raw_payments: BEGIN
+[0m08:45:30.769271 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m08:45:30.769686 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m08:45:30.770272 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m08:45:30.770555 [debug] [Thread-2 (]: Using duckdb connection "seed.jaffle_graphify.raw_orders"
+[0m08:45:30.770763 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m08:45:30.770971 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m08:45:30.771184 [debug] [Thread-2 (]: On seed.jaffle_graphify.raw_orders: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "jaffle_graphify", "target_name": "dev", "node_id": "seed.jaffle_graphify.raw_orders"} */
+
+    create table "jaffle_graphify"."main"."raw_orders" (id integer,user_id integer,order_date date,status text)
+  
+[0m08:45:30.771398 [debug] [Thread-3 (]: Using duckdb connection "seed.jaffle_graphify.raw_payments"
+[0m08:45:30.771597 [debug] [Thread-1 (]: Using duckdb connection "seed.jaffle_graphify.raw_customers"
+[0m08:45:30.771925 [debug] [Thread-3 (]: On seed.jaffle_graphify.raw_payments: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "jaffle_graphify", "target_name": "dev", "node_id": "seed.jaffle_graphify.raw_payments"} */
+
+    create table "jaffle_graphify"."main"."raw_payments" (id integer,order_id integer,payment_method text,amount integer)
+  
+[0m08:45:30.772170 [debug] [Thread-1 (]: On seed.jaffle_graphify.raw_customers: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "jaffle_graphify", "target_name": "dev", "node_id": "seed.jaffle_graphify.raw_customers"} */
+
+    create table "jaffle_graphify"."main"."raw_customers" (id integer,first_name text,last_name text)
+  
+[0m08:45:30.772818 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m08:45:30.778580 [debug] [Thread-2 (]: Using duckdb connection "seed.jaffle_graphify.raw_orders"
+[0m08:45:30.778818 [debug] [Thread-3 (]: SQL status: OK in 0.006 seconds
+[0m08:45:30.779035 [debug] [Thread-1 (]: SQL status: OK in 0.006 seconds
+[0m08:45:30.779301 [debug] [Thread-2 (]: On seed.jaffle_graphify.raw_orders: 
+          COPY "jaffle_graphify"."main"."raw_orders" FROM '/home/dharma6872/workspace/test/graphify-dbt-demo/jaffle_graphify/seeds/raw_orders.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        ...
+[0m08:45:30.780013 [debug] [Thread-3 (]: Using duckdb connection "seed.jaffle_graphify.raw_payments"
+[0m08:45:30.780773 [debug] [Thread-1 (]: Using duckdb connection "seed.jaffle_graphify.raw_customers"
+[0m08:45:30.781112 [debug] [Thread-3 (]: On seed.jaffle_graphify.raw_payments: 
+          COPY "jaffle_graphify"."main"."raw_payments" FROM '/home/dharma6872/workspace/test/graphify-dbt-demo/jaffle_graphify/seeds/raw_payments.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        ...
+[0m08:45:30.781347 [debug] [Thread-1 (]: On seed.jaffle_graphify.raw_customers: 
+          COPY "jaffle_graphify"."main"."raw_customers" FROM '/home/dharma6872/workspace/test/graphify-dbt-demo/jaffle_graphify/seeds/raw_customers.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        ...
+[0m08:45:30.787460 [debug] [Thread-2 (]: SQL status: OK in 0.006 seconds
+[0m08:45:30.787706 [debug] [Thread-3 (]: SQL status: OK in 0.006 seconds
+[0m08:45:30.787929 [debug] [Thread-1 (]: SQL status: OK in 0.006 seconds
+[0m08:45:30.790759 [debug] [Thread-2 (]: Writing runtime SQL for node "seed.jaffle_graphify.raw_orders"
+[0m08:45:30.791152 [debug] [Thread-3 (]: Writing runtime SQL for node "seed.jaffle_graphify.raw_payments"
+[0m08:45:30.791510 [debug] [Thread-1 (]: Writing runtime SQL for node "seed.jaffle_graphify.raw_customers"
+[0m08:45:30.802305 [debug] [Thread-1 (]: On seed.jaffle_graphify.raw_customers: COMMIT
+[0m08:45:30.803567 [debug] [Thread-2 (]: On seed.jaffle_graphify.raw_orders: COMMIT
+[0m08:45:30.804355 [debug] [Thread-3 (]: On seed.jaffle_graphify.raw_payments: COMMIT
+[0m08:45:30.804567 [debug] [Thread-1 (]: Using duckdb connection "seed.jaffle_graphify.raw_customers"
+[0m08:45:30.804799 [debug] [Thread-2 (]: Using duckdb connection "seed.jaffle_graphify.raw_orders"
+[0m08:45:30.805012 [debug] [Thread-3 (]: Using duckdb connection "seed.jaffle_graphify.raw_payments"
+[0m08:45:30.805213 [debug] [Thread-1 (]: On seed.jaffle_graphify.raw_customers: COMMIT
+[0m08:45:30.805411 [debug] [Thread-2 (]: On seed.jaffle_graphify.raw_orders: COMMIT
+[0m08:45:30.805602 [debug] [Thread-3 (]: On seed.jaffle_graphify.raw_payments: COMMIT
+[0m08:45:30.810021 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m08:45:30.811043 [debug] [Thread-1 (]: On seed.jaffle_graphify.raw_customers: Close
+[0m08:45:30.812309 [debug] [Thread-2 (]: SQL status: OK in 0.006 seconds
+[0m08:45:30.812565 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '10dec1f1-bfdc-441c-9bbc-073881bc25e8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7014bdc17770>]}
+[0m08:45:30.813022 [debug] [Thread-2 (]: On seed.jaffle_graphify.raw_orders: Close
+[0m08:45:30.813352 [info ] [Thread-1 (]: 1 of 3 OK loaded seed file main.raw_customers .................................. [[32mINSERT 3[0m in 0.06s]
+[0m08:45:30.813824 [debug] [Thread-3 (]: SQL status: OK in 0.008 seconds
+[0m08:45:30.814134 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '10dec1f1-bfdc-441c-9bbc-073881bc25e8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70145dca81a0>]}
+[0m08:45:30.814450 [debug] [Thread-1 (]: Finished running node seed.jaffle_graphify.raw_customers
+[0m08:45:30.814883 [debug] [Thread-3 (]: On seed.jaffle_graphify.raw_payments: Close
+[0m08:45:30.815178 [info ] [Thread-2 (]: 2 of 3 OK loaded seed file main.raw_orders ..................................... [[32mINSERT 4[0m in 0.06s]
+[0m08:45:30.815646 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '10dec1f1-bfdc-441c-9bbc-073881bc25e8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70145dc01760>]}
+[0m08:45:30.815970 [debug] [Thread-2 (]: Finished running node seed.jaffle_graphify.raw_orders
+[0m08:45:30.816276 [info ] [Thread-3 (]: 3 of 3 OK loaded seed file main.raw_payments ................................... [[32mINSERT 4[0m in 0.07s]
+[0m08:45:30.816760 [debug] [Thread-3 (]: Finished running node seed.jaffle_graphify.raw_payments
+[0m08:45:30.817740 [debug] [MainThread]: Using duckdb connection "master"
+[0m08:45:30.817920 [debug] [MainThread]: On master: BEGIN
+[0m08:45:30.818068 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m08:45:30.818523 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m08:45:30.818710 [debug] [MainThread]: On master: COMMIT
+[0m08:45:30.818860 [debug] [MainThread]: Using duckdb connection "master"
+[0m08:45:30.818999 [debug] [MainThread]: On master: COMMIT
+[0m08:45:30.819313 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m08:45:30.819486 [debug] [MainThread]: On master: Close
+[0m08:45:30.819683 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m08:45:30.819833 [debug] [MainThread]: Connection 'seed.jaffle_graphify.raw_customers' was properly closed.
+[0m08:45:30.819961 [debug] [MainThread]: Connection 'seed.jaffle_graphify.raw_orders' was properly closed.
+[0m08:45:30.820081 [debug] [MainThread]: Connection 'seed.jaffle_graphify.raw_payments' was properly closed.
+[0m08:45:30.820226 [info ] [MainThread]: 
+[0m08:45:30.820390 [info ] [MainThread]: Finished running 3 seeds in 0 hours 0 minutes and 0.13 seconds (0.13s).
+[0m08:45:30.820805 [debug] [MainThread]: Command end result
+[0m08:45:30.869629 [debug] [MainThread]: Wrote artifact WritableManifest to /home/dharma6872/workspace/test/graphify-dbt-demo/jaffle_graphify/target/manifest.json
+[0m08:45:30.870686 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/dharma6872/workspace/test/graphify-dbt-demo/jaffle_graphify/target/semantic_manifest.json
+[0m08:45:30.873634 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/dharma6872/workspace/test/graphify-dbt-demo/jaffle_graphify/target/run_results.json
+[0m08:45:30.873813 [info ] [MainThread]: 
+[0m08:45:30.874041 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m08:45:30.874209 [info ] [MainThread]: 
+[0m08:45:30.874398 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=3
+[0m08:45:30.875025 [debug] [MainThread]: Resource report: {"command_name": "seed", "command_success": true, "command_wall_clock_time": 1.2548864, "process_in_blocks": "13544", "process_kernel_time": 0.13851, "process_mem_max_rss": "177484", "process_out_blocks": "3464", "process_user_time": 1.800631}
+[0m08:45:30.875342 [debug] [MainThread]: Command `dbt seed` succeeded at 08:45:30.875287 after 1.26 seconds
+[0m08:45:30.875533 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7014d05f0da0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7014841a37a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7014841a2540>]}
+[0m08:45:30.875732 [debug] [MainThread]: Flushing usage events
+[0m08:45:31.664980 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m08:45:39.147680 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x764b6a0fec90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x764b69828ad0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x764b6a0ffaa0>]}
+
+
+============================== 08:45:39.149534 | 5bf4fa73-3f3c-472e-9f25-7fb617af946f ==============================
+[0m08:45:39.149534 [info ] [MainThread]: Running with dbt=1.11.11
+[0m08:45:39.149823 [debug] [MainThread]: running dbt with arguments {'log_path': '/home/dharma6872/workspace/test/graphify-dbt-demo/jaffle_graphify/logs', 'partial_parse': 'True', 'debug': 'False', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'version_check': 'True', 'indirect_selection': 'eager', 'warn_error': 'None', 'target_path': 'None', 'use_experimental_parser': 'False', 'static_parser': 'True', 'printer_width': '80', 'send_anonymous_usage_stats': 'True', 'no_print': 'None', 'log_format': 'default', 'write_json': 'True', 'fail_fast': 'False', 'profiles_dir': '/home/dharma6872/workspace/test/graphify-dbt-demo/jaffle_graphify', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt build', 'quiet': 'False', 'use_colors': 'True'}
+[0m08:45:39.267911 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '5bf4fa73-3f3c-472e-9f25-7fb617af946f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x764b6989fa40>]}
+[0m08:45:39.303211 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '5bf4fa73-3f3c-472e-9f25-7fb617af946f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x764b698e3d10>]}
+[0m08:45:39.304119 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m08:45:39.340445 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m08:45:39.397791 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m08:45:39.398048 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m08:45:39.398194 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m08:45:39.422961 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '5bf4fa73-3f3c-472e-9f25-7fb617af946f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x764b57ace030>]}
+[0m08:45:39.464517 [debug] [MainThread]: Wrote artifact WritableManifest to /home/dharma6872/workspace/test/graphify-dbt-demo/jaffle_graphify/target/manifest.json
+[0m08:45:39.479154 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/dharma6872/workspace/test/graphify-dbt-demo/jaffle_graphify/target/semantic_manifest.json
+[0m08:45:39.492865 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '5bf4fa73-3f3c-472e-9f25-7fb617af946f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x764b57599e50>]}
+[0m08:45:39.493160 [info ] [MainThread]: Found 5 models, 3 seeds, 9 data tests, 485 macros
+[0m08:45:39.494608 [info ] [MainThread]: 
+[0m08:45:39.494831 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m08:45:39.495004 [info ] [MainThread]: 
+[0m08:45:39.495521 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m08:45:39.498472 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_jaffle_graphify'
+[0m08:45:39.516046 [debug] [ThreadPool]: Using duckdb connection "list_jaffle_graphify"
+[0m08:45:39.516308 [debug] [ThreadPool]: On list_jaffle_graphify: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "jaffle_graphify", "target_name": "dev", "connection_name": "list_jaffle_graphify"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"jaffle_graphify"'
+    
+  
+  
+[0m08:45:39.516493 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m08:45:39.525624 [debug] [ThreadPool]: SQL status: OK in 0.009 seconds
+[0m08:45:39.526388 [debug] [ThreadPool]: On list_jaffle_graphify: Close
+[0m08:45:39.526902 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_jaffle_graphify, now create_jaffle_graphify_main)
+[0m08:45:39.527193 [debug] [ThreadPool]: Creating schema "database: "jaffle_graphify"
+schema: "main"
+"
+[0m08:45:39.530963 [debug] [ThreadPool]: Using duckdb connection "create_jaffle_graphify_main"
+[0m08:45:39.531163 [debug] [ThreadPool]: On create_jaffle_graphify_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "jaffle_graphify", "target_name": "dev", "connection_name": "create_jaffle_graphify_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='jaffle_graphify'
+        and type='sqlite'
+    
+  
+[0m08:45:39.531316 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m08:45:39.532119 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m08:45:39.532748 [debug] [ThreadPool]: Using duckdb connection "create_jaffle_graphify_main"
+[0m08:45:39.532921 [debug] [ThreadPool]: On create_jaffle_graphify_main: BEGIN
+[0m08:45:39.533345 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m08:45:39.533501 [debug] [ThreadPool]: Using duckdb connection "create_jaffle_graphify_main"
+[0m08:45:39.533634 [debug] [ThreadPool]: On create_jaffle_graphify_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "jaffle_graphify", "target_name": "dev", "connection_name": "create_jaffle_graphify_main"} */
+
+    
+    
+        create schema if not exists "jaffle_graphify"."main"
+    
+[0m08:45:39.534087 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m08:45:39.534623 [debug] [ThreadPool]: On create_jaffle_graphify_main: COMMIT
+[0m08:45:39.534824 [debug] [ThreadPool]: Using duckdb connection "create_jaffle_graphify_main"
+[0m08:45:39.534971 [debug] [ThreadPool]: On create_jaffle_graphify_main: COMMIT
+[0m08:45:39.535403 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m08:45:39.535577 [debug] [ThreadPool]: On create_jaffle_graphify_main: Close
+[0m08:45:39.536425 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_jaffle_graphify_main, now list_jaffle_graphify_main)
+[0m08:45:39.539197 [debug] [ThreadPool]: Using duckdb connection "list_jaffle_graphify_main"
+[0m08:45:39.539392 [debug] [ThreadPool]: On list_jaffle_graphify_main: BEGIN
+[0m08:45:39.539538 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m08:45:39.540046 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m08:45:39.540227 [debug] [ThreadPool]: Using duckdb connection "list_jaffle_graphify_main"
+[0m08:45:39.540380 [debug] [ThreadPool]: On list_jaffle_graphify_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "jaffle_graphify", "target_name": "dev", "connection_name": "list_jaffle_graphify_main"} */
+select
+      'jaffle_graphify' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'jaffle_graphify'
+  
+[0m08:45:39.542431 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m08:45:39.543159 [debug] [ThreadPool]: On list_jaffle_graphify_main: ROLLBACK
+[0m08:45:39.543699 [debug] [ThreadPool]: Failed to rollback 'list_jaffle_graphify_main'
+[0m08:45:39.543868 [debug] [ThreadPool]: On list_jaffle_graphify_main: Close
+[0m08:45:39.544564 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '5bf4fa73-3f3c-472e-9f25-7fb617af946f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x764b6c437590>]}
+[0m08:45:39.544811 [debug] [MainThread]: Using duckdb connection "master"
+[0m08:45:39.544974 [debug] [MainThread]: On master: BEGIN
+[0m08:45:39.545123 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m08:45:39.545540 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m08:45:39.545704 [debug] [MainThread]: On master: COMMIT
+[0m08:45:39.545839 [debug] [MainThread]: Using duckdb connection "master"
+[0m08:45:39.545965 [debug] [MainThread]: On master: COMMIT
+[0m08:45:39.546440 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m08:45:39.546650 [debug] [MainThread]: On master: Close
+[0m08:45:39.548208 [debug] [Thread-1 (]: Began running node seed.jaffle_graphify.raw_customers
+[0m08:45:39.548474 [debug] [Thread-2 (]: Began running node seed.jaffle_graphify.raw_orders
+[0m08:45:39.548955 [debug] [Thread-3 (]: Began running node seed.jaffle_graphify.raw_payments
+[0m08:45:39.548760 [info ] [Thread-1 (]: 1 of 17 START seed file main.raw_customers ..................................... [RUN]
+[0m08:45:39.549337 [info ] [Thread-2 (]: 2 of 17 START seed file main.raw_orders ........................................ [RUN]
+[0m08:45:39.549673 [info ] [Thread-3 (]: 3 of 17 START seed file main.raw_payments ...................................... [RUN]
+[0m08:45:39.550026 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_jaffle_graphify_main, now seed.jaffle_graphify.raw_customers)
+[0m08:45:39.550310 [debug] [Thread-2 (]: Acquiring new duckdb connection 'seed.jaffle_graphify.raw_orders'
+[0m08:45:39.550599 [debug] [Thread-3 (]: Acquiring new duckdb connection 'seed.jaffle_graphify.raw_payments'
+[0m08:45:39.550822 [debug] [Thread-1 (]: Began compiling node seed.jaffle_graphify.raw_customers
+[0m08:45:39.551040 [debug] [Thread-2 (]: Began compiling node seed.jaffle_graphify.raw_orders
+[0m08:45:39.551251 [debug] [Thread-3 (]: Began compiling node seed.jaffle_graphify.raw_payments
+[0m08:45:39.551479 [debug] [Thread-1 (]: Began executing node seed.jaffle_graphify.raw_customers
+[0m08:45:39.551696 [debug] [Thread-2 (]: Began executing node seed.jaffle_graphify.raw_orders
+[0m08:45:39.551905 [debug] [Thread-3 (]: Began executing node seed.jaffle_graphify.raw_payments
+[0m08:45:39.568407 [debug] [Thread-1 (]: Using duckdb connection "seed.jaffle_graphify.raw_customers"
+[0m08:45:39.570446 [debug] [Thread-2 (]: Using duckdb connection "seed.jaffle_graphify.raw_orders"
+[0m08:45:39.571059 [debug] [Thread-1 (]: On seed.jaffle_graphify.raw_customers: BEGIN
+[0m08:45:39.601402 [debug] [Thread-3 (]: Using duckdb connection "seed.jaffle_graphify.raw_payments"
+[0m08:45:39.601769 [debug] [Thread-2 (]: On seed.jaffle_graphify.raw_orders: BEGIN
+[0m08:45:39.602049 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m08:45:39.602287 [debug] [Thread-3 (]: On seed.jaffle_graphify.raw_payments: BEGIN
+[0m08:45:39.602513 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m08:45:39.602932 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m08:45:39.603737 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m08:45:39.603993 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m08:45:39.604231 [debug] [Thread-2 (]: Using duckdb connection "seed.jaffle_graphify.raw_orders"
+[0m08:45:39.604479 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m08:45:39.604678 [debug] [Thread-1 (]: Using duckdb connection "seed.jaffle_graphify.raw_customers"
+[0m08:45:39.604883 [debug] [Thread-2 (]: On seed.jaffle_graphify.raw_orders: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "jaffle_graphify", "target_name": "dev", "node_id": "seed.jaffle_graphify.raw_orders"} */
+truncate table "jaffle_graphify"."main"."raw_orders"
+[0m08:45:39.605279 [debug] [Thread-3 (]: Using duckdb connection "seed.jaffle_graphify.raw_payments"
+[0m08:45:39.605531 [debug] [Thread-1 (]: On seed.jaffle_graphify.raw_customers: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "jaffle_graphify", "target_name": "dev", "node_id": "seed.jaffle_graphify.raw_customers"} */
+truncate table "jaffle_graphify"."main"."raw_customers"
+[0m08:45:39.605893 [debug] [Thread-3 (]: On seed.jaffle_graphify.raw_payments: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "jaffle_graphify", "target_name": "dev", "node_id": "seed.jaffle_graphify.raw_payments"} */
+truncate table "jaffle_graphify"."main"."raw_payments"
+[0m08:45:39.606661 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m08:45:39.606932 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m08:45:39.613103 [debug] [Thread-2 (]: Using duckdb connection "seed.jaffle_graphify.raw_orders"
+[0m08:45:39.613333 [debug] [Thread-3 (]: SQL status: OK in 0.006 seconds
+[0m08:45:39.614046 [debug] [Thread-1 (]: Using duckdb connection "seed.jaffle_graphify.raw_customers"
+[0m08:45:39.614290 [debug] [Thread-2 (]: On seed.jaffle_graphify.raw_orders: 
+          COPY "jaffle_graphify"."main"."raw_orders" FROM '/home/dharma6872/workspace/test/graphify-dbt-demo/jaffle_graphify/seeds/raw_orders.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        ...
+[0m08:45:39.614934 [debug] [Thread-3 (]: Using duckdb connection "seed.jaffle_graphify.raw_payments"
+[0m08:45:39.615168 [debug] [Thread-1 (]: On seed.jaffle_graphify.raw_customers: 
+          COPY "jaffle_graphify"."main"."raw_customers" FROM '/home/dharma6872/workspace/test/graphify-dbt-demo/jaffle_graphify/seeds/raw_customers.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        ...
+[0m08:45:39.615497 [debug] [Thread-3 (]: On seed.jaffle_graphify.raw_payments: 
+          COPY "jaffle_graphify"."main"."raw_payments" FROM '/home/dharma6872/workspace/test/graphify-dbt-demo/jaffle_graphify/seeds/raw_payments.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        ...
+[0m08:45:39.618071 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m08:45:39.620945 [debug] [Thread-1 (]: Writing runtime SQL for node "seed.jaffle_graphify.raw_customers"
+[0m08:45:39.621371 [debug] [Thread-3 (]: SQL status: OK in 0.006 seconds
+[0m08:45:39.621749 [debug] [Thread-3 (]: Writing runtime SQL for node "seed.jaffle_graphify.raw_payments"
+[0m08:45:39.621979 [debug] [Thread-2 (]: SQL status: OK in 0.007 seconds
+[0m08:45:39.627851 [debug] [Thread-1 (]: On seed.jaffle_graphify.raw_customers: COMMIT
+[0m08:45:39.628329 [debug] [Thread-2 (]: Writing runtime SQL for node "seed.jaffle_graphify.raw_orders"
+[0m08:45:39.628598 [debug] [Thread-1 (]: Using duckdb connection "seed.jaffle_graphify.raw_customers"
+[0m08:45:39.629337 [debug] [Thread-3 (]: On seed.jaffle_graphify.raw_payments: COMMIT
+[0m08:45:39.629640 [debug] [Thread-1 (]: On seed.jaffle_graphify.raw_customers: COMMIT
+[0m08:45:39.629872 [debug] [Thread-3 (]: Using duckdb connection "seed.jaffle_graphify.raw_payments"
+[0m08:45:39.630214 [debug] [Thread-3 (]: On seed.jaffle_graphify.raw_payments: COMMIT
+[0m08:45:39.630975 [debug] [Thread-2 (]: On seed.jaffle_graphify.raw_orders: COMMIT
+[0m08:45:39.631340 [debug] [Thread-2 (]: Using duckdb connection "seed.jaffle_graphify.raw_orders"
+[0m08:45:39.631584 [debug] [Thread-2 (]: On seed.jaffle_graphify.raw_orders: COMMIT
+[0m08:45:39.634033 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m08:45:39.635051 [debug] [Thread-1 (]: On seed.jaffle_graphify.raw_customers: Close
+[0m08:45:39.636283 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '5bf4fa73-3f3c-472e-9f25-7fb617af946f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x764b6c562c90>]}
+[0m08:45:39.636529 [debug] [Thread-3 (]: SQL status: OK in 0.005 seconds
+[0m08:45:39.636851 [info ] [Thread-1 (]: 1 of 17 OK loaded seed file main.raw_customers ................................. [[32mINSERT 3[0m in 0.09s]
+[0m08:45:39.637418 [debug] [Thread-3 (]: On seed.jaffle_graphify.raw_payments: Close
+[0m08:45:39.637922 [debug] [Thread-1 (]: Finished running node seed.jaffle_graphify.raw_customers
+[0m08:45:39.639414 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '5bf4fa73-3f3c-472e-9f25-7fb617af946f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x764b6c562c90>]}
+[0m08:45:39.639686 [debug] [Thread-2 (]: SQL status: OK in 0.008 seconds
+[0m08:45:39.640066 [info ] [Thread-3 (]: 3 of 17 OK loaded seed file main.raw_payments .................................. [[32mINSERT 4[0m in 0.09s]
+[0m08:45:39.640715 [debug] [Thread-2 (]: On seed.jaffle_graphify.raw_orders: Close
+[0m08:45:39.640966 [debug] [Thread-4 (]: Began running node model.jaffle_graphify.stg_customers
+[0m08:45:39.641304 [debug] [Thread-3 (]: Finished running node seed.jaffle_graphify.raw_payments
+[0m08:45:39.641674 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '5bf4fa73-3f3c-472e-9f25-7fb617af946f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x764b569c01a0>]}
+[0m08:45:39.641979 [info ] [Thread-4 (]: 4 of 17 START sql view model main.stg_customers ................................ [RUN]
+[0m08:45:39.642451 [info ] [Thread-2 (]: 2 of 17 OK loaded seed file main.raw_orders .................................... [[32mINSERT 4[0m in 0.09s]
+[0m08:45:39.642946 [debug] [Thread-4 (]: Acquiring new duckdb connection 'model.jaffle_graphify.stg_customers'
+[0m08:45:39.643217 [debug] [Thread-1 (]: Began running node model.jaffle_graphify.stg_payments
+[0m08:45:39.643512 [debug] [Thread-2 (]: Finished running node seed.jaffle_graphify.raw_orders
+[0m08:45:39.643739 [debug] [Thread-4 (]: Began compiling node model.jaffle_graphify.stg_customers
+[0m08:45:39.644009 [info ] [Thread-1 (]: 5 of 17 START sql view model main.stg_payments ................................. [RUN]
+[0m08:45:39.648002 [debug] [Thread-4 (]: Writing injected SQL for node "model.jaffle_graphify.stg_customers"
+[0m08:45:39.648416 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly seed.jaffle_graphify.raw_customers, now model.jaffle_graphify.stg_payments)
+[0m08:45:39.648642 [debug] [Thread-3 (]: Began running node model.jaffle_graphify.stg_orders
+[0m08:45:39.649029 [debug] [Thread-1 (]: Began compiling node model.jaffle_graphify.stg_payments
+[0m08:45:39.649395 [info ] [Thread-3 (]: 6 of 17 START sql view model main.stg_orders ................................... [RUN]
+[0m08:45:39.650954 [debug] [Thread-1 (]: Writing injected SQL for node "model.jaffle_graphify.stg_payments"
+[0m08:45:39.651253 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly seed.jaffle_graphify.raw_payments, now model.jaffle_graphify.stg_orders)
+[0m08:45:39.651580 [debug] [Thread-3 (]: Began compiling node model.jaffle_graphify.stg_orders
+[0m08:45:39.652886 [debug] [Thread-3 (]: Writing injected SQL for node "model.jaffle_graphify.stg_orders"
+[0m08:45:39.653313 [debug] [Thread-1 (]: Began executing node model.jaffle_graphify.stg_payments
+[0m08:45:39.659130 [debug] [Thread-3 (]: Began executing node model.jaffle_graphify.stg_orders
+[0m08:45:39.668865 [debug] [Thread-3 (]: Writing runtime sql for node "model.jaffle_graphify.stg_orders"
+[0m08:45:39.669340 [debug] [Thread-1 (]: Writing runtime sql for node "model.jaffle_graphify.stg_payments"
+[0m08:45:39.669563 [debug] [Thread-4 (]: Began executing node model.jaffle_graphify.stg_customers
+[0m08:45:39.671320 [debug] [Thread-4 (]: Writing runtime sql for node "model.jaffle_graphify.stg_customers"
+[0m08:45:39.671943 [debug] [Thread-3 (]: Using duckdb connection "model.jaffle_graphify.stg_orders"
+[0m08:45:39.672309 [debug] [Thread-3 (]: On model.jaffle_graphify.stg_orders: BEGIN
+[0m08:45:39.672578 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m08:45:39.672855 [debug] [Thread-1 (]: Using duckdb connection "model.jaffle_graphify.stg_payments"
+[0m08:45:39.673092 [debug] [Thread-4 (]: Using duckdb connection "model.jaffle_graphify.stg_customers"
+[0m08:45:39.673467 [debug] [Thread-1 (]: On model.jaffle_graphify.stg_payments: BEGIN
+[0m08:45:39.673696 [debug] [Thread-4 (]: On model.jaffle_graphify.stg_customers: BEGIN
+[0m08:45:39.673926 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m08:45:39.674110 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m08:45:39.674311 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m08:45:39.674530 [debug] [Thread-3 (]: Using duckdb connection "model.jaffle_graphify.stg_orders"
+[0m08:45:39.675023 [debug] [Thread-3 (]: On model.jaffle_graphify.stg_orders: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "jaffle_graphify", "target_name": "dev", "node_id": "model.jaffle_graphify.stg_orders"} */
+
+  
+  create view "jaffle_graphify"."main"."stg_orders__dbt_tmp" as (
+    select
+    id as order_id,
+    user_id as customer_id,
+    cast(order_date as date) as order_date,
+    status
+from "jaffle_graphify"."main"."raw_orders"
+  );
+
+[0m08:45:39.675373 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m08:45:39.675616 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m08:45:39.675816 [debug] [Thread-4 (]: Using duckdb connection "model.jaffle_graphify.stg_customers"
+[0m08:45:39.676014 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m08:45:39.676222 [debug] [Thread-1 (]: Using duckdb connection "model.jaffle_graphify.stg_payments"
+[0m08:45:39.676430 [debug] [Thread-4 (]: On model.jaffle_graphify.stg_customers: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "jaffle_graphify", "target_name": "dev", "node_id": "model.jaffle_graphify.stg_customers"} */
+
+  
+  create view "jaffle_graphify"."main"."stg_customers__dbt_tmp" as (
+    select
+    id as customer_id,
+    first_name,
+    last_name,
+    first_name || ' ' || last_name as full_name
+from "jaffle_graphify"."main"."raw_customers"
+  );
+
+[0m08:45:39.680184 [debug] [Thread-3 (]: Using duckdb connection "model.jaffle_graphify.stg_orders"
+[0m08:45:39.680447 [debug] [Thread-1 (]: On model.jaffle_graphify.stg_payments: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "jaffle_graphify", "target_name": "dev", "node_id": "model.jaffle_graphify.stg_payments"} */
+
+  
+  create view "jaffle_graphify"."main"."stg_payments__dbt_tmp" as (
+    select
+    id as payment_id,
+    order_id,
+    payment_method,
+    amount
+from "jaffle_graphify"."main"."raw_payments"
+  );
+
+[0m08:45:39.680783 [debug] [Thread-3 (]: On model.jaffle_graphify.stg_orders: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "jaffle_graphify", "target_name": "dev", "node_id": "model.jaffle_graphify.stg_orders"} */
+alter view "jaffle_graphify"."main"."stg_orders__dbt_tmp" rename to "stg_orders"
+[0m08:45:39.681129 [debug] [Thread-4 (]: SQL status: OK in 0.000 seconds
+[0m08:45:39.681493 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m08:45:39.682981 [debug] [Thread-4 (]: Using duckdb connection "model.jaffle_graphify.stg_customers"
+[0m08:45:39.683213 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m08:45:39.684557 [debug] [Thread-1 (]: Using duckdb connection "model.jaffle_graphify.stg_payments"
+[0m08:45:39.684848 [debug] [Thread-4 (]: On model.jaffle_graphify.stg_customers: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "jaffle_graphify", "target_name": "dev", "node_id": "model.jaffle_graphify.stg_customers"} */
+alter view "jaffle_graphify"."main"."stg_customers__dbt_tmp" rename to "stg_customers"
+[0m08:45:39.685613 [debug] [Thread-3 (]: On model.jaffle_graphify.stg_orders: COMMIT
+[0m08:45:39.685866 [debug] [Thread-1 (]: On model.jaffle_graphify.stg_payments: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "jaffle_graphify", "target_name": "dev", "node_id": "model.jaffle_graphify.stg_payments"} */
+alter view "jaffle_graphify"."main"."stg_payments__dbt_tmp" rename to "stg_payments"
+[0m08:45:39.686193 [debug] [Thread-3 (]: Using duckdb connection "model.jaffle_graphify.stg_orders"
+[0m08:45:39.686542 [debug] [Thread-4 (]: SQL status: OK in 0.000 seconds
+[0m08:45:39.686769 [debug] [Thread-3 (]: On model.jaffle_graphify.stg_orders: COMMIT
+[0m08:45:39.686972 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m08:45:39.687653 [debug] [Thread-4 (]: On model.jaffle_graphify.stg_customers: COMMIT
+[0m08:45:39.688384 [debug] [Thread-1 (]: On model.jaffle_graphify.stg_payments: COMMIT
+[0m08:45:39.688686 [debug] [Thread-4 (]: Using duckdb connection "model.jaffle_graphify.stg_customers"
+[0m08:45:39.689140 [debug] [Thread-1 (]: Using duckdb connection "model.jaffle_graphify.stg_payments"
+[0m08:45:39.689385 [debug] [Thread-4 (]: On model.jaffle_graphify.stg_customers: COMMIT
+[0m08:45:39.689613 [debug] [Thread-1 (]: On model.jaffle_graphify.stg_payments: COMMIT
+[0m08:45:39.690951 [debug] [Thread-3 (]: SQL status: OK in 0.003 seconds
+[0m08:45:39.693778 [debug] [Thread-3 (]: Using duckdb connection "model.jaffle_graphify.stg_orders"
+[0m08:45:39.694020 [debug] [Thread-3 (]: On model.jaffle_graphify.stg_orders: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "jaffle_graphify", "target_name": "dev", "node_id": "model.jaffle_graphify.stg_orders"} */
+
+      drop view if exists "jaffle_graphify"."main"."stg_orders__dbt_backup" cascade
+    
+[0m08:45:39.694248 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m08:45:39.694452 [debug] [Thread-4 (]: SQL status: OK in 0.005 seconds
+[0m08:45:39.695676 [debug] [Thread-1 (]: Using duckdb connection "model.jaffle_graphify.stg_payments"
+[0m08:45:39.696914 [debug] [Thread-4 (]: Using duckdb connection "model.jaffle_graphify.stg_customers"
+[0m08:45:39.697153 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m08:45:39.697441 [debug] [Thread-1 (]: On model.jaffle_graphify.stg_payments: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "jaffle_graphify", "target_name": "dev", "node_id": "model.jaffle_graphify.stg_payments"} */
+
+      drop view if exists "jaffle_graphify"."main"."stg_payments__dbt_backup" cascade
+    
+[0m08:45:39.697674 [debug] [Thread-4 (]: On model.jaffle_graphify.stg_customers: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "jaffle_graphify", "target_name": "dev", "node_id": "model.jaffle_graphify.stg_customers"} */
+
+      drop view if exists "jaffle_graphify"."main"."stg_customers__dbt_backup" cascade
+    
+[0m08:45:39.698346 [debug] [Thread-3 (]: On model.jaffle_graphify.stg_orders: Close
+[0m08:45:39.698910 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m08:45:39.699247 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m08:45:39.699556 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '5bf4fa73-3f3c-472e-9f25-7fb617af946f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x764b5412f0b0>]}
+[0m08:45:39.700208 [debug] [Thread-1 (]: On model.jaffle_graphify.stg_payments: Close
+[0m08:45:39.700870 [debug] [Thread-4 (]: On model.jaffle_graphify.stg_customers: Close
+[0m08:45:39.701242 [info ] [Thread-3 (]: 6 of 17 OK created sql view model main.stg_orders .............................. [[32mOK[0m in 0.05s]
+[0m08:45:39.701625 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '5bf4fa73-3f3c-472e-9f25-7fb617af946f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x764b575d55b0>]}
+[0m08:45:39.701998 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '5bf4fa73-3f3c-472e-9f25-7fb617af946f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x764b541093a0>]}
+[0m08:45:39.702538 [debug] [Thread-3 (]: Finished running node model.jaffle_graphify.stg_orders
+[0m08:45:39.702931 [info ] [Thread-1 (]: 5 of 17 OK created sql view model main.stg_payments ............................ [[32mOK[0m in 0.05s]
+[0m08:45:39.703333 [info ] [Thread-4 (]: 4 of 17 OK created sql view model main.stg_customers ........................... [[32mOK[0m in 0.06s]
+[0m08:45:39.703929 [debug] [Thread-1 (]: Finished running node model.jaffle_graphify.stg_payments
+[0m08:45:39.704169 [debug] [Thread-2 (]: Began running node test.jaffle_graphify.not_null_stg_orders_customer_id.af79d5e4b5
+[0m08:45:39.704389 [debug] [Thread-3 (]: Began running node test.jaffle_graphify.not_null_stg_orders_order_id.81cfe2fe64
+[0m08:45:39.704649 [debug] [Thread-4 (]: Finished running node model.jaffle_graphify.stg_customers
+[0m08:45:39.704900 [debug] [Thread-1 (]: Began running node test.jaffle_graphify.unique_stg_orders_order_id.e3b841c71a
+[0m08:45:39.705173 [info ] [Thread-2 (]: 7 of 17 START test not_null_stg_orders_customer_id ............................. [RUN]
+[0m08:45:39.705767 [info ] [Thread-3 (]: 8 of 17 START test not_null_stg_orders_order_id ................................ [RUN]
+[0m08:45:39.706212 [info ] [Thread-1 (]: 9 of 17 START test unique_stg_orders_order_id .................................. [RUN]
+[0m08:45:39.706634 [debug] [Thread-4 (]: Began running node test.jaffle_graphify.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m08:45:39.706925 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly seed.jaffle_graphify.raw_orders, now test.jaffle_graphify.not_null_stg_orders_customer_id.af79d5e4b5)
+[0m08:45:39.707217 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.jaffle_graphify.stg_orders, now test.jaffle_graphify.not_null_stg_orders_order_id.81cfe2fe64)
+[0m08:45:39.707498 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.jaffle_graphify.stg_payments, now test.jaffle_graphify.unique_stg_orders_order_id.e3b841c71a)
+[0m08:45:39.707738 [info ] [Thread-4 (]: 10 of 17 START test not_null_stg_customers_customer_id ......................... [RUN]
+[0m08:45:39.708019 [debug] [Thread-2 (]: Began compiling node test.jaffle_graphify.not_null_stg_orders_customer_id.af79d5e4b5
+[0m08:45:39.708235 [debug] [Thread-3 (]: Began compiling node test.jaffle_graphify.not_null_stg_orders_order_id.81cfe2fe64
+[0m08:45:39.708445 [debug] [Thread-1 (]: Began compiling node test.jaffle_graphify.unique_stg_orders_order_id.e3b841c71a
+[0m08:45:39.708689 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.jaffle_graphify.stg_customers, now test.jaffle_graphify.not_null_stg_customers_customer_id.e2cfb1f9aa)
+[0m08:45:39.714778 [debug] [Thread-2 (]: Writing injected SQL for node "test.jaffle_graphify.not_null_stg_orders_customer_id.af79d5e4b5"
+[0m08:45:39.716830 [debug] [Thread-3 (]: Writing injected SQL for node "test.jaffle_graphify.not_null_stg_orders_order_id.81cfe2fe64"
+[0m08:45:39.719984 [debug] [Thread-1 (]: Writing injected SQL for node "test.jaffle_graphify.unique_stg_orders_order_id.e3b841c71a"
+[0m08:45:39.720248 [debug] [Thread-4 (]: Began compiling node test.jaffle_graphify.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m08:45:39.723422 [debug] [Thread-4 (]: Writing injected SQL for node "test.jaffle_graphify.not_null_stg_customers_customer_id.e2cfb1f9aa"
+[0m08:45:39.723789 [debug] [Thread-2 (]: Began executing node test.jaffle_graphify.not_null_stg_orders_customer_id.af79d5e4b5
+[0m08:45:39.724066 [debug] [Thread-1 (]: Began executing node test.jaffle_graphify.unique_stg_orders_order_id.e3b841c71a
+[0m08:45:39.732466 [debug] [Thread-2 (]: Writing runtime sql for node "test.jaffle_graphify.not_null_stg_orders_customer_id.af79d5e4b5"
+[0m08:45:39.734206 [debug] [Thread-1 (]: Writing runtime sql for node "test.jaffle_graphify.unique_stg_orders_order_id.e3b841c71a"
+[0m08:45:39.734498 [debug] [Thread-3 (]: Began executing node test.jaffle_graphify.not_null_stg_orders_order_id.81cfe2fe64
+[0m08:45:39.734836 [debug] [Thread-4 (]: Began executing node test.jaffle_graphify.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m08:45:39.736084 [debug] [Thread-3 (]: Writing runtime sql for node "test.jaffle_graphify.not_null_stg_orders_order_id.81cfe2fe64"
+[0m08:45:39.737318 [debug] [Thread-4 (]: Writing runtime sql for node "test.jaffle_graphify.not_null_stg_customers_customer_id.e2cfb1f9aa"
+[0m08:45:39.737708 [debug] [Thread-2 (]: Using duckdb connection "test.jaffle_graphify.not_null_stg_orders_customer_id.af79d5e4b5"
+[0m08:45:39.738294 [debug] [Thread-2 (]: On test.jaffle_graphify.not_null_stg_orders_customer_id.af79d5e4b5: BEGIN
+[0m08:45:39.738719 [debug] [Thread-1 (]: Using duckdb connection "test.jaffle_graphify.unique_stg_orders_order_id.e3b841c71a"
+[0m08:45:39.738968 [debug] [Thread-4 (]: Using duckdb connection "test.jaffle_graphify.not_null_stg_customers_customer_id.e2cfb1f9aa"
+[0m08:45:39.739180 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m08:45:39.739410 [debug] [Thread-3 (]: Using duckdb connection "test.jaffle_graphify.not_null_stg_orders_order_id.81cfe2fe64"
+[0m08:45:39.739655 [debug] [Thread-1 (]: On test.jaffle_graphify.unique_stg_orders_order_id.e3b841c71a: BEGIN
+[0m08:45:39.739922 [debug] [Thread-4 (]: On test.jaffle_graphify.not_null_stg_customers_customer_id.e2cfb1f9aa: BEGIN
+[0m08:45:39.740319 [debug] [Thread-3 (]: On test.jaffle_graphify.not_null_stg_orders_order_id.81cfe2fe64: BEGIN
+[0m08:45:39.740541 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m08:45:39.740772 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m08:45:39.740955 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m08:45:39.741160 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m08:45:39.741466 [debug] [Thread-2 (]: Using duckdb connection "test.jaffle_graphify.not_null_stg_orders_customer_id.af79d5e4b5"
+[0m08:45:39.741796 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m08:45:39.742094 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m08:45:39.742320 [debug] [Thread-2 (]: On test.jaffle_graphify.not_null_stg_orders_customer_id.af79d5e4b5: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "jaffle_graphify", "target_name": "dev", "node_id": "test.jaffle_graphify.not_null_stg_orders_customer_id.af79d5e4b5"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select customer_id
+from "jaffle_graphify"."main"."stg_orders"
+where customer_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m08:45:39.742586 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m08:45:39.742781 [debug] [Thread-1 (]: Using duckdb connection "test.jaffle_graphify.unique_stg_orders_order_id.e3b841c71a"
+[0m08:45:39.742987 [debug] [Thread-4 (]: Using duckdb connection "test.jaffle_graphify.not_null_stg_customers_customer_id.e2cfb1f9aa"
+[0m08:45:39.743294 [debug] [Thread-3 (]: Using duckdb connection "test.jaffle_graphify.not_null_stg_orders_order_id.81cfe2fe64"
+[0m08:45:39.743506 [debug] [Thread-1 (]: On test.jaffle_graphify.unique_stg_orders_order_id.e3b841c71a: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "jaffle_graphify", "target_name": "dev", "node_id": "test.jaffle_graphify.unique_stg_orders_order_id.e3b841c71a"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    order_id as unique_field,
+    count(*) as n_records
+
+from "jaffle_graphify"."main"."stg_orders"
+where order_id is not null
+group by order_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m08:45:39.743745 [debug] [Thread-4 (]: On test.jaffle_graphify.not_null_stg_customers_customer_id.e2cfb1f9aa: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "jaffle_graphify", "target_name": "dev", "node_id": "test.jaffle_graphify.not_null_stg_customers_customer_id.e2cfb1f9aa"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select customer_id
+from "jaffle_graphify"."main"."stg_customers"
+where customer_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m08:45:39.744010 [debug] [Thread-3 (]: On test.jaffle_graphify.not_null_stg_orders_order_id.81cfe2fe64: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "jaffle_graphify", "target_name": "dev", "node_id": "test.jaffle_graphify.not_null_stg_orders_order_id.81cfe2fe64"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select order_id
+from "jaffle_graphify"."main"."stg_orders"
+where order_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m08:45:39.745266 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m08:45:39.745594 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m08:45:39.747649 [debug] [Thread-4 (]: On test.jaffle_graphify.not_null_stg_customers_customer_id.e2cfb1f9aa: ROLLBACK
+[0m08:45:39.747910 [debug] [Thread-3 (]: SQL status: OK in 0.003 seconds
+[0m08:45:39.748642 [debug] [Thread-2 (]: On test.jaffle_graphify.not_null_stg_orders_customer_id.af79d5e4b5: ROLLBACK
+[0m08:45:39.748909 [debug] [Thread-1 (]: SQL status: OK in 0.005 seconds
+[0m08:45:39.749338 [debug] [Thread-4 (]: Failed to rollback 'test.jaffle_graphify.not_null_stg_customers_customer_id.e2cfb1f9aa'
+[0m08:45:39.749841 [debug] [Thread-2 (]: Failed to rollback 'test.jaffle_graphify.not_null_stg_orders_customer_id.af79d5e4b5'
+[0m08:45:39.750567 [debug] [Thread-3 (]: On test.jaffle_graphify.not_null_stg_orders_order_id.81cfe2fe64: ROLLBACK
+[0m08:45:39.751303 [debug] [Thread-1 (]: On test.jaffle_graphify.unique_stg_orders_order_id.e3b841c71a: ROLLBACK
+[0m08:45:39.751518 [debug] [Thread-4 (]: On test.jaffle_graphify.not_null_stg_customers_customer_id.e2cfb1f9aa: Close
+[0m08:45:39.751747 [debug] [Thread-2 (]: On test.jaffle_graphify.not_null_stg_orders_customer_id.af79d5e4b5: Close
+[0m08:45:39.752186 [debug] [Thread-3 (]: Failed to rollback 'test.jaffle_graphify.not_null_stg_orders_order_id.81cfe2fe64'
+[0m08:45:39.752610 [debug] [Thread-1 (]: Failed to rollback 'test.jaffle_graphify.unique_stg_orders_order_id.e3b841c71a'
+[0m08:45:39.752979 [info ] [Thread-4 (]: 10 of 17 PASS not_null_stg_customers_customer_id ............................... [[32mPASS[0m in 0.04s]
+[0m08:45:39.753312 [debug] [Thread-3 (]: On test.jaffle_graphify.not_null_stg_orders_order_id.81cfe2fe64: Close
+[0m08:45:39.753603 [info ] [Thread-2 (]: 7 of 17 PASS not_null_stg_orders_customer_id ................................... [[32mPASS[0m in 0.05s]
+[0m08:45:39.753888 [debug] [Thread-1 (]: On test.jaffle_graphify.unique_stg_orders_order_id.e3b841c71a: Close
+[0m08:45:39.754186 [debug] [Thread-4 (]: Finished running node test.jaffle_graphify.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m08:45:39.754803 [debug] [Thread-2 (]: Finished running node test.jaffle_graphify.not_null_stg_orders_customer_id.af79d5e4b5
+[0m08:45:39.754547 [info ] [Thread-3 (]: 8 of 17 PASS not_null_stg_orders_order_id ...................................... [[32mPASS[0m in 0.05s]
+[0m08:45:39.755423 [debug] [Thread-4 (]: Began running node test.jaffle_graphify.unique_stg_customers_customer_id.c7614daada
+[0m08:45:39.755182 [info ] [Thread-1 (]: 9 of 17 PASS unique_stg_orders_order_id ........................................ [[32mPASS[0m in 0.05s]
+[0m08:45:39.755971 [debug] [Thread-3 (]: Finished running node test.jaffle_graphify.not_null_stg_orders_order_id.81cfe2fe64
+[0m08:45:39.756209 [info ] [Thread-4 (]: 11 of 17 START test unique_stg_customers_customer_id ........................... [RUN]
+[0m08:45:39.756551 [debug] [Thread-1 (]: Finished running node test.jaffle_graphify.unique_stg_orders_order_id.e3b841c71a
+[0m08:45:39.756920 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.jaffle_graphify.not_null_stg_customers_customer_id.e2cfb1f9aa, now test.jaffle_graphify.unique_stg_customers_customer_id.c7614daada)
+[0m08:45:39.757337 [debug] [Thread-4 (]: Began compiling node test.jaffle_graphify.unique_stg_customers_customer_id.c7614daada
+[0m08:45:39.759555 [debug] [Thread-4 (]: Writing injected SQL for node "test.jaffle_graphify.unique_stg_customers_customer_id.c7614daada"
+[0m08:45:39.759814 [debug] [Thread-2 (]: Began running node model.jaffle_graphify.fct_orders
+[0m08:45:39.760178 [info ] [Thread-2 (]: 12 of 17 START sql table model main.fct_orders ................................. [RUN]
+[0m08:45:39.760482 [debug] [Thread-4 (]: Began executing node test.jaffle_graphify.unique_stg_customers_customer_id.c7614daada
+[0m08:45:39.760733 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.jaffle_graphify.not_null_stg_orders_customer_id.af79d5e4b5, now model.jaffle_graphify.fct_orders)
+[0m08:45:39.761895 [debug] [Thread-4 (]: Writing runtime sql for node "test.jaffle_graphify.unique_stg_customers_customer_id.c7614daada"
+[0m08:45:39.762183 [debug] [Thread-2 (]: Began compiling node model.jaffle_graphify.fct_orders
+[0m08:45:39.763694 [debug] [Thread-2 (]: Writing injected SQL for node "model.jaffle_graphify.fct_orders"
+[0m08:45:39.764043 [debug] [Thread-4 (]: Using duckdb connection "test.jaffle_graphify.unique_stg_customers_customer_id.c7614daada"
+[0m08:45:39.764257 [debug] [Thread-4 (]: On test.jaffle_graphify.unique_stg_customers_customer_id.c7614daada: BEGIN
+[0m08:45:39.764429 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m08:45:39.764776 [debug] [Thread-2 (]: Began executing node model.jaffle_graphify.fct_orders
+[0m08:45:39.770342 [debug] [Thread-4 (]: SQL status: OK in 0.006 seconds
+[0m08:45:39.774761 [debug] [Thread-2 (]: Writing runtime sql for node "model.jaffle_graphify.fct_orders"
+[0m08:45:39.775036 [debug] [Thread-4 (]: Using duckdb connection "test.jaffle_graphify.unique_stg_customers_customer_id.c7614daada"
+[0m08:45:39.775422 [debug] [Thread-4 (]: On test.jaffle_graphify.unique_stg_customers_customer_id.c7614daada: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "jaffle_graphify", "target_name": "dev", "node_id": "test.jaffle_graphify.unique_stg_customers_customer_id.c7614daada"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    customer_id as unique_field,
+    count(*) as n_records
+
+from "jaffle_graphify"."main"."stg_customers"
+where customer_id is not null
+group by customer_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m08:45:39.775871 [debug] [Thread-2 (]: Using duckdb connection "model.jaffle_graphify.fct_orders"
+[0m08:45:39.776066 [debug] [Thread-2 (]: On model.jaffle_graphify.fct_orders: BEGIN
+[0m08:45:39.776227 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m08:45:39.776688 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m08:45:39.776910 [debug] [Thread-2 (]: Using duckdb connection "model.jaffle_graphify.fct_orders"
+[0m08:45:39.777118 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m08:45:39.777349 [debug] [Thread-2 (]: On model.jaffle_graphify.fct_orders: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "jaffle_graphify", "target_name": "dev", "node_id": "model.jaffle_graphify.fct_orders"} */
+
+  
+    
+    
+
+    create  table
+      "jaffle_graphify"."main"."fct_orders__dbt_tmp"
+  
+    as (
+      with orders as (
+    select * from "jaffle_graphify"."main"."stg_orders"
+),
+
+payments as (
+    select
+        order_id,
+        sum(amount) as total_amount
+    from "jaffle_graphify"."main"."stg_payments"
+    group by 1
+)
+
+select
+    orders.order_id,
+    orders.customer_id,
+    orders.order_date,
+    orders.status,
+    coalesce(payments.total_amount, 0) as total_amount
+from orders
+left join payments using (order_id)
+    );
+  
+  
+[0m08:45:39.778180 [debug] [Thread-4 (]: On test.jaffle_graphify.unique_stg_customers_customer_id.c7614daada: ROLLBACK
+[0m08:45:39.778750 [debug] [Thread-4 (]: Failed to rollback 'test.jaffle_graphify.unique_stg_customers_customer_id.c7614daada'
+[0m08:45:39.778953 [debug] [Thread-4 (]: On test.jaffle_graphify.unique_stg_customers_customer_id.c7614daada: Close
+[0m08:45:39.779260 [info ] [Thread-4 (]: 11 of 17 PASS unique_stg_customers_customer_id ................................. [[32mPASS[0m in 0.02s]
+[0m08:45:39.779585 [debug] [Thread-4 (]: Finished running node test.jaffle_graphify.unique_stg_customers_customer_id.c7614daada
+[0m08:45:39.781604 [debug] [Thread-2 (]: SQL status: OK in 0.003 seconds
+[0m08:45:39.783141 [debug] [Thread-2 (]: Using duckdb connection "model.jaffle_graphify.fct_orders"
+[0m08:45:39.783363 [debug] [Thread-2 (]: On model.jaffle_graphify.fct_orders: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "jaffle_graphify", "target_name": "dev", "node_id": "model.jaffle_graphify.fct_orders"} */
+alter table "jaffle_graphify"."main"."fct_orders__dbt_tmp" rename to "fct_orders"
+[0m08:45:39.783805 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m08:45:39.786195 [debug] [Thread-2 (]: On model.jaffle_graphify.fct_orders: COMMIT
+[0m08:45:39.786406 [debug] [Thread-2 (]: Using duckdb connection "model.jaffle_graphify.fct_orders"
+[0m08:45:39.786590 [debug] [Thread-2 (]: On model.jaffle_graphify.fct_orders: COMMIT
+[0m08:45:39.789356 [debug] [Thread-2 (]: SQL status: OK in 0.003 seconds
+[0m08:45:39.791645 [debug] [Thread-2 (]: Using duckdb connection "model.jaffle_graphify.fct_orders"
+[0m08:45:39.791885 [debug] [Thread-2 (]: On model.jaffle_graphify.fct_orders: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "jaffle_graphify", "target_name": "dev", "node_id": "model.jaffle_graphify.fct_orders"} */
+
+      drop table if exists "jaffle_graphify"."main"."fct_orders__dbt_backup" cascade
+    
+[0m08:45:39.792313 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m08:45:39.792988 [debug] [Thread-2 (]: On model.jaffle_graphify.fct_orders: Close
+[0m08:45:39.793295 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '5bf4fa73-3f3c-472e-9f25-7fb617af946f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x764b5418f380>]}
+[0m08:45:39.793619 [info ] [Thread-2 (]: 12 of 17 OK created sql table model main.fct_orders ............................ [[32mOK[0m in 0.03s]
+[0m08:45:39.793906 [debug] [Thread-2 (]: Finished running node model.jaffle_graphify.fct_orders
+[0m08:45:39.794549 [debug] [Thread-1 (]: Began running node test.jaffle_graphify.not_null_fct_orders_order_id.4e687af8d0
+[0m08:45:39.794778 [debug] [Thread-3 (]: Began running node test.jaffle_graphify.unique_fct_orders_order_id.523ddb6ce5
+[0m08:45:39.794989 [info ] [Thread-1 (]: 13 of 17 START test not_null_fct_orders_order_id ............................... [RUN]
+[0m08:45:39.795271 [info ] [Thread-3 (]: 14 of 17 START test unique_fct_orders_order_id ................................. [RUN]
+[0m08:45:39.795590 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.jaffle_graphify.unique_stg_orders_order_id.e3b841c71a, now test.jaffle_graphify.not_null_fct_orders_order_id.4e687af8d0)
+[0m08:45:39.795874 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.jaffle_graphify.not_null_stg_orders_order_id.81cfe2fe64, now test.jaffle_graphify.unique_fct_orders_order_id.523ddb6ce5)
+[0m08:45:39.796121 [debug] [Thread-1 (]: Began compiling node test.jaffle_graphify.not_null_fct_orders_order_id.4e687af8d0
+[0m08:45:39.796348 [debug] [Thread-3 (]: Began compiling node test.jaffle_graphify.unique_fct_orders_order_id.523ddb6ce5
+[0m08:45:39.798401 [debug] [Thread-1 (]: Writing injected SQL for node "test.jaffle_graphify.not_null_fct_orders_order_id.4e687af8d0"
+[0m08:45:39.800277 [debug] [Thread-3 (]: Writing injected SQL for node "test.jaffle_graphify.unique_fct_orders_order_id.523ddb6ce5"
+[0m08:45:39.800712 [debug] [Thread-1 (]: Began executing node test.jaffle_graphify.not_null_fct_orders_order_id.4e687af8d0
+[0m08:45:39.800950 [debug] [Thread-3 (]: Began executing node test.jaffle_graphify.unique_fct_orders_order_id.523ddb6ce5
+[0m08:45:39.802073 [debug] [Thread-1 (]: Writing runtime sql for node "test.jaffle_graphify.not_null_fct_orders_order_id.4e687af8d0"
+[0m08:45:39.803286 [debug] [Thread-3 (]: Writing runtime sql for node "test.jaffle_graphify.unique_fct_orders_order_id.523ddb6ce5"
+[0m08:45:39.803761 [debug] [Thread-1 (]: Using duckdb connection "test.jaffle_graphify.not_null_fct_orders_order_id.4e687af8d0"
+[0m08:45:39.803963 [debug] [Thread-1 (]: On test.jaffle_graphify.not_null_fct_orders_order_id.4e687af8d0: BEGIN
+[0m08:45:39.804142 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m08:45:39.804349 [debug] [Thread-3 (]: Using duckdb connection "test.jaffle_graphify.unique_fct_orders_order_id.523ddb6ce5"
+[0m08:45:39.804665 [debug] [Thread-3 (]: On test.jaffle_graphify.unique_fct_orders_order_id.523ddb6ce5: BEGIN
+[0m08:45:39.804857 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m08:45:39.805045 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m08:45:39.805330 [debug] [Thread-1 (]: Using duckdb connection "test.jaffle_graphify.not_null_fct_orders_order_id.4e687af8d0"
+[0m08:45:39.805505 [debug] [Thread-1 (]: On test.jaffle_graphify.not_null_fct_orders_order_id.4e687af8d0: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "jaffle_graphify", "target_name": "dev", "node_id": "test.jaffle_graphify.not_null_fct_orders_order_id.4e687af8d0"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select order_id
+from "jaffle_graphify"."main"."fct_orders"
+where order_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m08:45:39.805694 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m08:45:39.805986 [debug] [Thread-3 (]: Using duckdb connection "test.jaffle_graphify.unique_fct_orders_order_id.523ddb6ce5"
+[0m08:45:39.806170 [debug] [Thread-3 (]: On test.jaffle_graphify.unique_fct_orders_order_id.523ddb6ce5: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "jaffle_graphify", "target_name": "dev", "node_id": "test.jaffle_graphify.unique_fct_orders_order_id.523ddb6ce5"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    order_id as unique_field,
+    count(*) as n_records
+
+from "jaffle_graphify"."main"."fct_orders"
+where order_id is not null
+group by order_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m08:45:39.806580 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m08:45:39.807383 [debug] [Thread-1 (]: On test.jaffle_graphify.not_null_fct_orders_order_id.4e687af8d0: ROLLBACK
+[0m08:45:39.807682 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m08:45:39.808094 [debug] [Thread-1 (]: Failed to rollback 'test.jaffle_graphify.not_null_fct_orders_order_id.4e687af8d0'
+[0m08:45:39.808842 [debug] [Thread-3 (]: On test.jaffle_graphify.unique_fct_orders_order_id.523ddb6ce5: ROLLBACK
+[0m08:45:39.809047 [debug] [Thread-1 (]: On test.jaffle_graphify.not_null_fct_orders_order_id.4e687af8d0: Close
+[0m08:45:39.809474 [debug] [Thread-3 (]: Failed to rollback 'test.jaffle_graphify.unique_fct_orders_order_id.523ddb6ce5'
+[0m08:45:39.810035 [debug] [Thread-3 (]: On test.jaffle_graphify.unique_fct_orders_order_id.523ddb6ce5: Close
+[0m08:45:39.809856 [info ] [Thread-1 (]: 13 of 17 PASS not_null_fct_orders_order_id ..................................... [[32mPASS[0m in 0.01s]
+[0m08:45:39.810728 [debug] [Thread-1 (]: Finished running node test.jaffle_graphify.not_null_fct_orders_order_id.4e687af8d0
+[0m08:45:39.810437 [info ] [Thread-3 (]: 14 of 17 PASS unique_fct_orders_order_id ....................................... [[32mPASS[0m in 0.01s]
+[0m08:45:39.811173 [debug] [Thread-3 (]: Finished running node test.jaffle_graphify.unique_fct_orders_order_id.523ddb6ce5
+[0m08:45:39.811556 [debug] [Thread-2 (]: Began running node model.jaffle_graphify.dim_customers
+[0m08:45:39.811963 [info ] [Thread-2 (]: 15 of 17 START sql table model main.dim_customers .............................. [RUN]
+[0m08:45:39.812224 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.jaffle_graphify.fct_orders, now model.jaffle_graphify.dim_customers)
+[0m08:45:39.812425 [debug] [Thread-2 (]: Began compiling node model.jaffle_graphify.dim_customers
+[0m08:45:39.813862 [debug] [Thread-2 (]: Writing injected SQL for node "model.jaffle_graphify.dim_customers"
+[0m08:45:39.814179 [debug] [Thread-2 (]: Began executing node model.jaffle_graphify.dim_customers
+[0m08:45:39.815667 [debug] [Thread-2 (]: Writing runtime sql for node "model.jaffle_graphify.dim_customers"
+[0m08:45:39.815970 [debug] [Thread-2 (]: Using duckdb connection "model.jaffle_graphify.dim_customers"
+[0m08:45:39.816156 [debug] [Thread-2 (]: On model.jaffle_graphify.dim_customers: BEGIN
+[0m08:45:39.816311 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m08:45:39.816744 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m08:45:39.816950 [debug] [Thread-2 (]: Using duckdb connection "model.jaffle_graphify.dim_customers"
+[0m08:45:39.817140 [debug] [Thread-2 (]: On model.jaffle_graphify.dim_customers: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "jaffle_graphify", "target_name": "dev", "node_id": "model.jaffle_graphify.dim_customers"} */
+
+  
+    
+    
+
+    create  table
+      "jaffle_graphify"."main"."dim_customers__dbt_tmp"
+  
+    as (
+      with customers as (
+    select * from "jaffle_graphify"."main"."stg_customers"
+),
+
+orders as (
+    select * from "jaffle_graphify"."main"."fct_orders"
+)
+
+select
+    customers.customer_id,
+    customers.full_name,
+    count(orders.order_id) as order_count,
+    sum(orders.total_amount) as lifetime_value
+from customers
+left join orders using (customer_id)
+group by 1, 2
+    );
+  
+  
+[0m08:45:39.820946 [debug] [Thread-2 (]: SQL status: OK in 0.004 seconds
+[0m08:45:39.822536 [debug] [Thread-2 (]: Using duckdb connection "model.jaffle_graphify.dim_customers"
+[0m08:45:39.822744 [debug] [Thread-2 (]: On model.jaffle_graphify.dim_customers: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "jaffle_graphify", "target_name": "dev", "node_id": "model.jaffle_graphify.dim_customers"} */
+alter table "jaffle_graphify"."main"."dim_customers__dbt_tmp" rename to "dim_customers"
+[0m08:45:39.823185 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m08:45:39.823917 [debug] [Thread-2 (]: On model.jaffle_graphify.dim_customers: COMMIT
+[0m08:45:39.824114 [debug] [Thread-2 (]: Using duckdb connection "model.jaffle_graphify.dim_customers"
+[0m08:45:39.824277 [debug] [Thread-2 (]: On model.jaffle_graphify.dim_customers: COMMIT
+[0m08:45:39.826605 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m08:45:39.827843 [debug] [Thread-2 (]: Using duckdb connection "model.jaffle_graphify.dim_customers"
+[0m08:45:39.828042 [debug] [Thread-2 (]: On model.jaffle_graphify.dim_customers: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "jaffle_graphify", "target_name": "dev", "node_id": "model.jaffle_graphify.dim_customers"} */
+
+      drop table if exists "jaffle_graphify"."main"."dim_customers__dbt_backup" cascade
+    
+[0m08:45:39.828436 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m08:45:39.829098 [debug] [Thread-2 (]: On model.jaffle_graphify.dim_customers: Close
+[0m08:45:39.829396 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '5bf4fa73-3f3c-472e-9f25-7fb617af946f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x764b54145f10>]}
+[0m08:45:39.829746 [info ] [Thread-2 (]: 15 of 17 OK created sql table model main.dim_customers ......................... [[32mOK[0m in 0.02s]
+[0m08:45:39.830048 [debug] [Thread-2 (]: Finished running node model.jaffle_graphify.dim_customers
+[0m08:45:39.830728 [debug] [Thread-1 (]: Began running node test.jaffle_graphify.not_null_dim_customers_customer_id.dd91cd1c8d
+[0m08:45:39.830992 [debug] [Thread-3 (]: Began running node test.jaffle_graphify.unique_dim_customers_customer_id.15c9f1e2fd
+[0m08:45:39.831244 [info ] [Thread-1 (]: 16 of 17 START test not_null_dim_customers_customer_id ......................... [RUN]
+[0m08:45:39.831540 [info ] [Thread-3 (]: 17 of 17 START test unique_dim_customers_customer_id ........................... [RUN]
+[0m08:45:39.831886 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.jaffle_graphify.not_null_fct_orders_order_id.4e687af8d0, now test.jaffle_graphify.not_null_dim_customers_customer_id.dd91cd1c8d)
+[0m08:45:39.832151 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.jaffle_graphify.unique_fct_orders_order_id.523ddb6ce5, now test.jaffle_graphify.unique_dim_customers_customer_id.15c9f1e2fd)
+[0m08:45:39.832374 [debug] [Thread-1 (]: Began compiling node test.jaffle_graphify.not_null_dim_customers_customer_id.dd91cd1c8d
+[0m08:45:39.832596 [debug] [Thread-3 (]: Began compiling node test.jaffle_graphify.unique_dim_customers_customer_id.15c9f1e2fd
+[0m08:45:39.834824 [debug] [Thread-1 (]: Writing injected SQL for node "test.jaffle_graphify.not_null_dim_customers_customer_id.dd91cd1c8d"
+[0m08:45:39.837623 [debug] [Thread-3 (]: Writing injected SQL for node "test.jaffle_graphify.unique_dim_customers_customer_id.15c9f1e2fd"
+[0m08:45:39.838052 [debug] [Thread-3 (]: Began executing node test.jaffle_graphify.unique_dim_customers_customer_id.15c9f1e2fd
+[0m08:45:39.838261 [debug] [Thread-1 (]: Began executing node test.jaffle_graphify.not_null_dim_customers_customer_id.dd91cd1c8d
+[0m08:45:39.839375 [debug] [Thread-3 (]: Writing runtime sql for node "test.jaffle_graphify.unique_dim_customers_customer_id.15c9f1e2fd"
+[0m08:45:39.840463 [debug] [Thread-1 (]: Writing runtime sql for node "test.jaffle_graphify.not_null_dim_customers_customer_id.dd91cd1c8d"
+[0m08:45:39.840900 [debug] [Thread-3 (]: Using duckdb connection "test.jaffle_graphify.unique_dim_customers_customer_id.15c9f1e2fd"
+[0m08:45:39.841135 [debug] [Thread-3 (]: On test.jaffle_graphify.unique_dim_customers_customer_id.15c9f1e2fd: BEGIN
+[0m08:45:39.841360 [debug] [Thread-1 (]: Using duckdb connection "test.jaffle_graphify.not_null_dim_customers_customer_id.dd91cd1c8d"
+[0m08:45:39.841560 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m08:45:39.841762 [debug] [Thread-1 (]: On test.jaffle_graphify.not_null_dim_customers_customer_id.dd91cd1c8d: BEGIN
+[0m08:45:39.842115 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m08:45:39.842407 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m08:45:39.842640 [debug] [Thread-3 (]: Using duckdb connection "test.jaffle_graphify.unique_dim_customers_customer_id.15c9f1e2fd"
+[0m08:45:39.842839 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m08:45:39.843044 [debug] [Thread-3 (]: On test.jaffle_graphify.unique_dim_customers_customer_id.15c9f1e2fd: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "jaffle_graphify", "target_name": "dev", "node_id": "test.jaffle_graphify.unique_dim_customers_customer_id.15c9f1e2fd"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    customer_id as unique_field,
+    count(*) as n_records
+
+from "jaffle_graphify"."main"."dim_customers"
+where customer_id is not null
+group by customer_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m08:45:39.843255 [debug] [Thread-1 (]: Using duckdb connection "test.jaffle_graphify.not_null_dim_customers_customer_id.dd91cd1c8d"
+[0m08:45:39.843565 [debug] [Thread-1 (]: On test.jaffle_graphify.not_null_dim_customers_customer_id.dd91cd1c8d: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "jaffle_graphify", "target_name": "dev", "node_id": "test.jaffle_graphify.not_null_dim_customers_customer_id.dd91cd1c8d"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select customer_id
+from "jaffle_graphify"."main"."dim_customers"
+where customer_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m08:45:39.844187 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m08:45:39.844969 [debug] [Thread-1 (]: On test.jaffle_graphify.not_null_dim_customers_customer_id.dd91cd1c8d: ROLLBACK
+[0m08:45:39.845265 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m08:45:39.845685 [debug] [Thread-1 (]: Failed to rollback 'test.jaffle_graphify.not_null_dim_customers_customer_id.dd91cd1c8d'
+[0m08:45:39.845962 [debug] [Thread-1 (]: On test.jaffle_graphify.not_null_dim_customers_customer_id.dd91cd1c8d: Close
+[0m08:45:39.846673 [debug] [Thread-3 (]: On test.jaffle_graphify.unique_dim_customers_customer_id.15c9f1e2fd: ROLLBACK
+[0m08:45:39.847033 [info ] [Thread-1 (]: 16 of 17 PASS not_null_dim_customers_customer_id ............................... [[32mPASS[0m in 0.02s]
+[0m08:45:39.847504 [debug] [Thread-3 (]: Failed to rollback 'test.jaffle_graphify.unique_dim_customers_customer_id.15c9f1e2fd'
+[0m08:45:39.847794 [debug] [Thread-1 (]: Finished running node test.jaffle_graphify.not_null_dim_customers_customer_id.dd91cd1c8d
+[0m08:45:39.848002 [debug] [Thread-3 (]: On test.jaffle_graphify.unique_dim_customers_customer_id.15c9f1e2fd: Close
+[0m08:45:39.848414 [info ] [Thread-3 (]: 17 of 17 PASS unique_dim_customers_customer_id ................................. [[32mPASS[0m in 0.02s]
+[0m08:45:39.848702 [debug] [Thread-3 (]: Finished running node test.jaffle_graphify.unique_dim_customers_customer_id.15c9f1e2fd
+[0m08:45:39.849693 [debug] [MainThread]: Using duckdb connection "master"
+[0m08:45:39.849895 [debug] [MainThread]: On master: BEGIN
+[0m08:45:39.850049 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m08:45:39.850459 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m08:45:39.850651 [debug] [MainThread]: On master: COMMIT
+[0m08:45:39.850794 [debug] [MainThread]: Using duckdb connection "master"
+[0m08:45:39.850991 [debug] [MainThread]: On master: COMMIT
+[0m08:45:39.851324 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m08:45:39.851494 [debug] [MainThread]: On master: Close
+[0m08:45:39.851689 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m08:45:39.851823 [debug] [MainThread]: Connection 'test.jaffle_graphify.not_null_dim_customers_customer_id.dd91cd1c8d' was properly closed.
+[0m08:45:39.851943 [debug] [MainThread]: Connection 'model.jaffle_graphify.dim_customers' was properly closed.
+[0m08:45:39.852060 [debug] [MainThread]: Connection 'test.jaffle_graphify.unique_dim_customers_customer_id.15c9f1e2fd' was properly closed.
+[0m08:45:39.852172 [debug] [MainThread]: Connection 'test.jaffle_graphify.unique_stg_customers_customer_id.c7614daada' was properly closed.
+[0m08:45:39.852342 [info ] [MainThread]: 
+[0m08:45:39.852526 [info ] [MainThread]: Finished running 3 seeds, 2 table models, 9 data tests, 3 view models in 0 hours 0 minutes and 0.36 seconds (0.36s).
+[0m08:45:39.853611 [debug] [MainThread]: Command end result
+[0m08:45:39.867378 [debug] [MainThread]: Wrote artifact WritableManifest to /home/dharma6872/workspace/test/graphify-dbt-demo/jaffle_graphify/target/manifest.json
+[0m08:45:39.868450 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/dharma6872/workspace/test/graphify-dbt-demo/jaffle_graphify/target/semantic_manifest.json
+[0m08:45:39.871580 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/dharma6872/workspace/test/graphify-dbt-demo/jaffle_graphify/target/run_results.json
+[0m08:45:39.871759 [info ] [MainThread]: 
+[0m08:45:39.871961 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m08:45:39.872131 [info ] [MainThread]: 
+[0m08:45:39.872296 [info ] [MainThread]: Done. PASS=17 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=17
+[0m08:45:39.872804 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": true, "command_wall_clock_time": 0.75690377, "process_in_blocks": "4992", "process_kernel_time": 0.135133, "process_mem_max_rss": "182016", "process_out_blocks": "2776", "process_user_time": 1.359281}
+[0m08:45:39.873062 [debug] [MainThread]: Command `dbt build` succeeded at 08:45:39.873008 after 0.76 seconds
+[0m08:45:39.873267 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x764b6a02f9b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x764b6a02cd70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x764b6a02ca70>]}
+[0m08:45:39.873467 [debug] [MainThread]: Flushing usage events
+[0m08:45:40.923857 [debug] [MainThread]: An error was encountered while trying to flush usage events

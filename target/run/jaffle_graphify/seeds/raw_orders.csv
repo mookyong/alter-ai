@@ -1,0 +1,11 @@
+
+    
+    
+    truncate table "jaffle_graphify"."main"."raw_orders";
+    -- dbt seed --
+    
+          COPY "jaffle_graphify"."main"."raw_orders" FROM '/home/dharma6872/workspace/test/graphify-dbt-demo/jaffle_graphify/seeds/raw_orders.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        
+
+;
+  

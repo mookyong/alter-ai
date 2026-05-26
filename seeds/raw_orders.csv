@@ -1,0 +1,5 @@
+id,user_id,order_date,status
+1001,1,2026-01-01,completed
+1002,1,2026-01-03,completed
+1003,2,2026-01-05,returned
+1004,3,2026-01-07,completed
