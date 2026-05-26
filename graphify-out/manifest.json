@@ -63,5 +63,10 @@
     "mtime": 1779752617.2492447,
     "ast_hash": "887ade9e4a58d86705cf83b627ae13cd",
     "semantic_hash": "887ade9e4a58d86705cf83b627ae13cd"
+  },
+  "/home/dharma6872/workspace/test/graphify-dbt-demo/jaffle_graphify/README.md": {
+    "mtime": 1779754681.1976106,
+    "ast_hash": "8688330a71522ca0a5ae32daf8dac714",
+    "semantic_hash": ""
   }
 }
