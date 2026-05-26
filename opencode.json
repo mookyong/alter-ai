@@ -1,0 +1,17 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "code-review-graph": {
+      "type": "local",
+      "command": [
+        "/home/dharma6872/miniconda3/envs/code-review-graph/bin/code-review-graph",
+        "serve"
+      ],
+      "enabled": true,
+      "timeout": 30000
+    }
+  },
+  "instructions": [
+    "AGENTS.md"
+  ]
+}

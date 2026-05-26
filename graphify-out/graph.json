@@ -52,6 +52,339 @@
   },
   "nodes": [
     {
+      "label": "README.md",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "id": "readme_md",
+      "community": 6,
+      "norm_label": "readme.md"
+    },
+    {
+      "label": "Graphify + dbt Demo Setup",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "id": "jaffle_graphify_readme_graphify_dbt_demo_setup",
+      "community": 6,
+      "norm_label": "graphify + dbt demo setup"
+    },
+    {
+      "label": "1. Conda \ud658\uacbd \uc0dd\uc131",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L3",
+      "id": "jaffle_graphify_readme_1_conda_\ud658\uacbd_\uc0dd\uc131",
+      "community": 9,
+      "norm_label": "1. conda \u1112\u116a\u11ab\u1100\u1167\u11bc \u1109\u1162\u11bc\u1109\u1165\u11bc"
+    },
+    {
+      "label": "code:bash (conda create -n graphify-dbt python=3.12 -y)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L5",
+      "id": "jaffle_graphify_readme_codeblock_1",
+      "community": 9,
+      "norm_label": "code:bash (conda create -n graphify-dbt python=3.12 -y)"
+    },
+    {
+      "label": "2. \uc0d8\ud50c dbt \ud504\ub85c\uc81d\ud2b8 \uc0dd\uc131",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L12",
+      "id": "jaffle_graphify_readme_2_\uc0d8\ud50c_dbt_\ud504\ub85c\uc81d\ud2b8_\uc0dd\uc131",
+      "community": 10,
+      "norm_label": "2. \u1109\u1162\u11b7\u1111\u1173\u11af dbt \u1111\u1173\u1105\u1169\u110c\u1166\u11a8\u1110\u1173 \u1109\u1162\u11bc\u1109\u1165\u11bc"
+    },
+    {
+      "label": "code:bash (mkdir -p test/graphify-dbt-demo)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L14",
+      "id": "jaffle_graphify_readme_codeblock_2",
+      "community": 10,
+      "norm_label": "code:bash (mkdir -p test/graphify-dbt-demo)"
+    },
+    {
+      "label": "3. dbt \ub3d9\uc791 \ud655\uc778",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L30",
+      "id": "jaffle_graphify_readme_3_dbt_\ub3d9\uc791_\ud655\uc778",
+      "community": 6,
+      "norm_label": "3. dbt \u1103\u1169\u11bc\u110c\u1161\u11a8 \u1112\u116a\u11a8\u110b\u1175\u11ab"
+    },
+    {
+      "label": "code:bash (dbt debug)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L32",
+      "id": "jaffle_graphify_readme_codeblock_3",
+      "community": 6,
+      "norm_label": "code:bash (dbt debug)"
+    },
+    {
+      "label": "4. Graphify \uc124\uce58 \ubc0f \uac80\uc99d",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L39",
+      "id": "jaffle_graphify_readme_4_graphify_\uc124\uce58_\ubc0f_\uac80\uc99d",
+      "community": 11,
+      "norm_label": "4. graphify \u1109\u1165\u11af\u110e\u1175 \u1106\u1175\u11be \u1100\u1165\u11b7\u110c\u1173\u11bc"
+    },
+    {
+      "label": "code:bash (pwd)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L41",
+      "id": "jaffle_graphify_readme_codeblock_4",
+      "community": 11,
+      "norm_label": "code:bash (pwd)"
+    },
+    {
+      "label": "5. OpenCode\uc5d0\uc11c \uc2e4\ud589",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L55",
+      "id": "jaffle_graphify_readme_5_opencode\uc5d0\uc11c_\uc2e4\ud589",
+      "community": 7,
+      "norm_label": "5. opencode\u110b\u1166\u1109\u1165 \u1109\u1175\u11af\u1112\u1162\u11bc"
+    },
+    {
+      "label": "code:bash (opencode .)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L57",
+      "id": "jaffle_graphify_readme_codeblock_5",
+      "community": 7,
+      "norm_label": "code:bash (opencode .)"
+    },
+    {
+      "label": "code:bash (ls -lah graphify-out)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L64",
+      "id": "jaffle_graphify_readme_codeblock_6",
+      "community": 7,
+      "norm_label": "code:bash (ls -lah graphify-out)"
+    },
+    {
+      "label": "6. Graphify \uacb0\uacfc \uae30\uc900 lineage",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L71",
+      "id": "jaffle_graphify_readme_6_graphify_\uacb0\uacfc_\uae30\uc900_lineage",
+      "community": 6,
+      "norm_label": "6. graphify \u1100\u1167\u11af\u1100\u116a \u1100\u1175\u110c\u116e\u11ab lineage"
+    },
+    {
+      "label": "7. Graphify query \uc608\uc2dc",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L79",
+      "id": "jaffle_graphify_readme_7_graphify_query_\uc608\uc2dc",
+      "community": 12,
+      "norm_label": "7. graphify query \u110b\u1168\u1109\u1175"
+    },
+    {
+      "label": "code:bash (graphify query \"dim_customers \ubaa8\ub378\uc740 \uc5b4\ub5a4 seed\uc640 staging \ubaa8\ub378\uc5d0 \uc758\uc874\ud558\ub098\uc694)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L81",
+      "id": "jaffle_graphify_readme_codeblock_7",
+      "community": 12,
+      "norm_label": "code:bash (graphify query \"dim_customers \u1106\u1169\u1103\u1166\u11af\u110b\u1173\u11ab \u110b\u1165\u1104\u1165\u11ab seed\u110b\u116a staging \u1106\u1169\u1103\u1166\u11af\u110b\u1166 \u110b\u1174\u110c\u1169\u11ab\u1112\u1161\u1102\u1161\u110b\u116d)"
+    },
+    {
+      "label": "8. \uc7ac\uc2e4\ud589",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L85",
+      "id": "jaffle_graphify_readme_8_\uc7ac\uc2e4\ud589",
+      "community": 13,
+      "norm_label": "8. \u110c\u1162\u1109\u1175\u11af\u1112\u1162\u11bc"
+    },
+    {
+      "label": "code:bash (rm -rf graphify-out target dbt_packages logs jaffle_graphify)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L87",
+      "id": "jaffle_graphify_readme_codeblock_8",
+      "community": 13,
+      "norm_label": "code:bash (rm -rf graphify-out target dbt_packages logs jaffle_graphify)"
+    },
+    {
+      "label": "9. \ucf54\ub4dc \ubcc0\uacbd \ud6c4 Graphify \uc5c5\ub370\uc774\ud2b8",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L94",
+      "id": "jaffle_graphify_readme_9_\ucf54\ub4dc_\ubcc0\uacbd_\ud6c4_graphify_\uc5c5\ub370\uc774\ud2b8",
+      "community": 8,
+      "norm_label": "9. \u110f\u1169\u1103\u1173 \u1107\u1167\u11ab\u1100\u1167\u11bc \u1112\u116e graphify \u110b\u1165\u11b8\u1103\u1166\u110b\u1175\u1110\u1173"
+    },
+    {
+      "label": "\uc218\ub3d9 \uc5c5\ub370\uc774\ud2b8",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L96",
+      "id": "jaffle_graphify_readme_\uc218\ub3d9_\uc5c5\ub370\uc774\ud2b8",
+      "community": 21,
+      "norm_label": "\u1109\u116e\u1103\u1169\u11bc \u110b\u1165\u11b8\u1103\u1166\u110b\u1175\u1110\u1173"
+    },
+    {
+      "label": "code:bash (graphify update .)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L98",
+      "id": "jaffle_graphify_readme_codeblock_9",
+      "community": 21,
+      "norm_label": "code:bash (graphify update .)"
+    },
+    {
+      "label": "dbt \ud504\ub85c\uc81d\ud2b8 \ubcc0\uacbd \ud6c4 \ucd94\ucc9c \uc21c\uc11c",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L103",
+      "id": "jaffle_graphify_readme_dbt_\ud504\ub85c\uc81d\ud2b8_\ubcc0\uacbd_\ud6c4_\ucd94\ucc9c_\uc21c\uc11c",
+      "community": 14,
+      "norm_label": "dbt \u1111\u1173\u1105\u1169\u110c\u1166\u11a8\u1110\u1173 \u1107\u1167\u11ab\u1100\u1167\u11bc \u1112\u116e \u110e\u116e\u110e\u1165\u11ab \u1109\u116e\u11ab\u1109\u1165"
+    },
+    {
+      "label": "code:bash (cd ~/work/graphify-dbt-demo/jaffle_graphify)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L105",
+      "id": "jaffle_graphify_readme_codeblock_10",
+      "community": 14,
+      "norm_label": "code:bash (cd ~/work/graphify-dbt-demo/jaffle_graphify)"
+    },
+    {
+      "label": "\uac1c\ubc1c \uc911 \uc790\ub3d9 \ub3d9\uae30\ud654",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L121",
+      "id": "jaffle_graphify_readme_\uac1c\ubc1c_\uc911_\uc790\ub3d9_\ub3d9\uae30\ud654",
+      "community": 15,
+      "norm_label": "\u1100\u1162\u1107\u1161\u11af \u110c\u116e\u11bc \u110c\u1161\u1103\u1169\u11bc \u1103\u1169\u11bc\u1100\u1175\u1112\u116a"
+    },
+    {
+      "label": "code:bash (graphify watch .)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L123",
+      "id": "jaffle_graphify_readme_codeblock_11",
+      "community": 15,
+      "norm_label": "code:bash (graphify watch .)"
+    },
+    {
+      "label": "git commit \uae30\uc900 \uc790\ub3d9 \uc5c5\ub370\uc774\ud2b8",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L128",
+      "id": "jaffle_graphify_readme_git_commit_\uae30\uc900_\uc790\ub3d9_\uc5c5\ub370\uc774\ud2b8",
+      "community": 8,
+      "norm_label": "git commit \u1100\u1175\u110c\u116e\u11ab \u110c\u1161\u1103\u1169\u11bc \u110b\u1165\u11b8\u1103\u1166\u110b\u1175\u1110\u1173"
+    },
+    {
+      "label": "code:bash (graphify hook install)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L130",
+      "id": "jaffle_graphify_readme_codeblock_12",
+      "community": 8,
+      "norm_label": "code:bash (graphify hook install)"
+    },
+    {
+      "label": "\ucf54\ub4dc \ubcc0\uacbd vs \ubb38\uc11c \ubcc0\uacbd \uad6c\ubd84",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L138",
+      "id": "jaffle_graphify_readme_\ucf54\ub4dc_\ubcc0\uacbd_vs_\ubb38\uc11c_\ubcc0\uacbd_\uad6c\ubd84",
+      "community": 16,
+      "norm_label": "\u110f\u1169\u1103\u1173 \u1107\u1167\u11ab\u1100\u1167\u11bc vs \u1106\u116e\u11ab\u1109\u1165 \u1107\u1167\u11ab\u1100\u1167\u11bc \u1100\u116e\u1107\u116e\u11ab"
+    },
+    {
+      "label": "code:bash (graphify update .)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L140",
+      "id": "jaffle_graphify_readme_codeblock_13",
+      "community": 16,
+      "norm_label": "code:bash (graphify update .)"
+    },
+    {
+      "label": "\uc0ad\uc81c \ub610\ub294 \ub300\uaddc\ubaa8 \ub9ac\ud329\ud130\ub9c1 \ud6c4",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L149",
+      "id": "jaffle_graphify_readme_\uc0ad\uc81c_\ub610\ub294_\ub300\uaddc\ubaa8_\ub9ac\ud329\ud130\ub9c1_\ud6c4",
+      "community": 17,
+      "norm_label": "\u1109\u1161\u11a8\u110c\u1166 \u1104\u1169\u1102\u1173\u11ab \u1103\u1162\u1100\u1172\u1106\u1169 \u1105\u1175\u1111\u1162\u11a8\u1110\u1165\u1105\u1175\u11bc \u1112\u116e"
+    },
+    {
+      "label": "code:bash (cp -r graphify-out graphify-out.backup.$(date +%Y%m%d-%H%M%S)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L151",
+      "id": "jaffle_graphify_readme_codeblock_14",
+      "community": 17,
+      "norm_label": "code:bash (cp -r graphify-out graphify-out.backup.$(date +%y%m%d-%h%m%s)"
+    },
+    {
+      "label": "\uc644\uc804 \uc7ac\uc0dd\uc131\uc774 \ud544\uc694\ud55c \uacbd\uc6b0",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L159",
+      "id": "jaffle_graphify_readme_\uc644\uc804_\uc7ac\uc0dd\uc131\uc774_\ud544\uc694\ud55c_\uacbd\uc6b0",
+      "community": 18,
+      "norm_label": "\u110b\u116a\u11ab\u110c\u1165\u11ab \u110c\u1162\u1109\u1162\u11bc\u1109\u1165\u11bc\u110b\u1175 \u1111\u1175\u11af\u110b\u116d\u1112\u1161\u11ab \u1100\u1167\u11bc\u110b\u116e"
+    },
+    {
+      "label": "code:bash (rm -rf graphify-out)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L161",
+      "id": "jaffle_graphify_readme_codeblock_15",
+      "community": 18,
+      "norm_label": "code:bash (rm -rf graphify-out)"
+    },
+    {
+      "label": "graphify-out Git \uad00\ub9ac \ucd94\ucc9c",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L171",
+      "id": "jaffle_graphify_readme_graphify_out_git_\uad00\ub9ac_\ucd94\ucc9c",
+      "community": 19,
+      "norm_label": "graphify-out git \u1100\u116a\u11ab\u1105\u1175 \u110e\u116e\u110e\u1165\u11ab"
+    },
+    {
+      "label": "code:bash (graphify-out/manifest.json)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L173",
+      "id": "jaffle_graphify_readme_codeblock_16",
+      "community": 19,
+      "norm_label": "code:bash (graphify-out/manifest.json)"
+    },
+    {
+      "label": "dbt \uc0d8\ud50c \ud504\ub85c\uc81d\ud2b8 \uc77c\uc0c1 \ub8e8\ud2f4",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L179",
+      "id": "jaffle_graphify_readme_dbt_\uc0d8\ud50c_\ud504\ub85c\uc81d\ud2b8_\uc77c\uc0c1_\ub8e8\ud2f4",
+      "community": 20,
+      "norm_label": "dbt \u1109\u1162\u11b7\u1111\u1173\u11af \u1111\u1173\u1105\u1169\u110c\u1166\u11a8\u1110\u1173 \u110b\u1175\u11af\u1109\u1161\u11bc \u1105\u116e\u1110\u1175\u11ab"
+    },
+    {
+      "label": "code:bash (dbt build)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L181",
+      "id": "jaffle_graphify_readme_codeblock_17",
+      "community": 20,
+      "norm_label": "code:bash (dbt build)"
+    },
+    {
       "label": "dim_customers.sql",
       "file_type": "code",
       "source_file": "models/marts/dim_customers.sql",
@@ -347,22 +680,369 @@
       "community": 3,
       "norm_label": "opencode plugin config",
       "id": "opencode_plugin_config"
-    },
-    {
-      "label": "Graphify + dbt Demo Setup",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "norm_label": "graphify + dbt demo setup",
-      "community": 0,
-      "id": "readme_graphify_dbt_demo"
     }
   ],
   "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "readme_md",
+      "target": "jaffle_graphify_readme_graphify_dbt_demo_setup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "jaffle_graphify_readme_graphify_dbt_demo_setup",
+      "target": "jaffle_graphify_readme_1_conda_\ud658\uacbd_\uc0dd\uc131",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "jaffle_graphify_readme_graphify_dbt_demo_setup",
+      "target": "jaffle_graphify_readme_2_\uc0d8\ud50c_dbt_\ud504\ub85c\uc81d\ud2b8_\uc0dd\uc131",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "jaffle_graphify_readme_graphify_dbt_demo_setup",
+      "target": "jaffle_graphify_readme_3_dbt_\ub3d9\uc791_\ud655\uc778",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L39",
+      "weight": 1.0,
+      "source": "jaffle_graphify_readme_graphify_dbt_demo_setup",
+      "target": "jaffle_graphify_readme_4_graphify_\uc124\uce58_\ubc0f_\uac80\uc99d",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L55",
+      "weight": 1.0,
+      "source": "jaffle_graphify_readme_graphify_dbt_demo_setup",
+      "target": "jaffle_graphify_readme_5_opencode\uc5d0\uc11c_\uc2e4\ud589",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L71",
+      "weight": 1.0,
+      "source": "jaffle_graphify_readme_graphify_dbt_demo_setup",
+      "target": "jaffle_graphify_readme_6_graphify_\uacb0\uacfc_\uae30\uc900_lineage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L79",
+      "weight": 1.0,
+      "source": "jaffle_graphify_readme_graphify_dbt_demo_setup",
+      "target": "jaffle_graphify_readme_7_graphify_query_\uc608\uc2dc",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L85",
+      "weight": 1.0,
+      "source": "jaffle_graphify_readme_graphify_dbt_demo_setup",
+      "target": "jaffle_graphify_readme_8_\uc7ac\uc2e4\ud589",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L94",
+      "weight": 1.0,
+      "source": "jaffle_graphify_readme_graphify_dbt_demo_setup",
+      "target": "jaffle_graphify_readme_9_\ucf54\ub4dc_\ubcc0\uacbd_\ud6c4_graphify_\uc5c5\ub370\uc774\ud2b8",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "jaffle_graphify_readme_1_conda_\ud658\uacbd_\uc0dd\uc131",
+      "target": "jaffle_graphify_readme_codeblock_1",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "jaffle_graphify_readme_2_\uc0d8\ud50c_dbt_\ud504\ub85c\uc81d\ud2b8_\uc0dd\uc131",
+      "target": "jaffle_graphify_readme_codeblock_2",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "jaffle_graphify_readme_3_dbt_\ub3d9\uc791_\ud655\uc778",
+      "target": "jaffle_graphify_readme_codeblock_3",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L41",
+      "weight": 1.0,
+      "source": "jaffle_graphify_readme_4_graphify_\uc124\uce58_\ubc0f_\uac80\uc99d",
+      "target": "jaffle_graphify_readme_codeblock_4",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L57",
+      "weight": 1.0,
+      "source": "jaffle_graphify_readme_5_opencode\uc5d0\uc11c_\uc2e4\ud589",
+      "target": "jaffle_graphify_readme_codeblock_5",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L64",
+      "weight": 1.0,
+      "source": "jaffle_graphify_readme_5_opencode\uc5d0\uc11c_\uc2e4\ud589",
+      "target": "jaffle_graphify_readme_codeblock_6",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L81",
+      "weight": 1.0,
+      "source": "jaffle_graphify_readme_7_graphify_query_\uc608\uc2dc",
+      "target": "jaffle_graphify_readme_codeblock_7",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L87",
+      "weight": 1.0,
+      "source": "jaffle_graphify_readme_8_\uc7ac\uc2e4\ud589",
+      "target": "jaffle_graphify_readme_codeblock_8",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L96",
+      "weight": 1.0,
+      "source": "jaffle_graphify_readme_9_\ucf54\ub4dc_\ubcc0\uacbd_\ud6c4_graphify_\uc5c5\ub370\uc774\ud2b8",
+      "target": "jaffle_graphify_readme_\uc218\ub3d9_\uc5c5\ub370\uc774\ud2b8",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L103",
+      "weight": 1.0,
+      "source": "jaffle_graphify_readme_9_\ucf54\ub4dc_\ubcc0\uacbd_\ud6c4_graphify_\uc5c5\ub370\uc774\ud2b8",
+      "target": "jaffle_graphify_readme_dbt_\ud504\ub85c\uc81d\ud2b8_\ubcc0\uacbd_\ud6c4_\ucd94\ucc9c_\uc21c\uc11c",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L121",
+      "weight": 1.0,
+      "source": "jaffle_graphify_readme_9_\ucf54\ub4dc_\ubcc0\uacbd_\ud6c4_graphify_\uc5c5\ub370\uc774\ud2b8",
+      "target": "jaffle_graphify_readme_\uac1c\ubc1c_\uc911_\uc790\ub3d9_\ub3d9\uae30\ud654",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L128",
+      "weight": 1.0,
+      "source": "jaffle_graphify_readme_9_\ucf54\ub4dc_\ubcc0\uacbd_\ud6c4_graphify_\uc5c5\ub370\uc774\ud2b8",
+      "target": "jaffle_graphify_readme_git_commit_\uae30\uc900_\uc790\ub3d9_\uc5c5\ub370\uc774\ud2b8",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L138",
+      "weight": 1.0,
+      "source": "jaffle_graphify_readme_9_\ucf54\ub4dc_\ubcc0\uacbd_\ud6c4_graphify_\uc5c5\ub370\uc774\ud2b8",
+      "target": "jaffle_graphify_readme_\ucf54\ub4dc_\ubcc0\uacbd_vs_\ubb38\uc11c_\ubcc0\uacbd_\uad6c\ubd84",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L149",
+      "weight": 1.0,
+      "source": "jaffle_graphify_readme_9_\ucf54\ub4dc_\ubcc0\uacbd_\ud6c4_graphify_\uc5c5\ub370\uc774\ud2b8",
+      "target": "jaffle_graphify_readme_\uc0ad\uc81c_\ub610\ub294_\ub300\uaddc\ubaa8_\ub9ac\ud329\ud130\ub9c1_\ud6c4",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L159",
+      "weight": 1.0,
+      "source": "jaffle_graphify_readme_9_\ucf54\ub4dc_\ubcc0\uacbd_\ud6c4_graphify_\uc5c5\ub370\uc774\ud2b8",
+      "target": "jaffle_graphify_readme_\uc644\uc804_\uc7ac\uc0dd\uc131\uc774_\ud544\uc694\ud55c_\uacbd\uc6b0",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L171",
+      "weight": 1.0,
+      "source": "jaffle_graphify_readme_9_\ucf54\ub4dc_\ubcc0\uacbd_\ud6c4_graphify_\uc5c5\ub370\uc774\ud2b8",
+      "target": "jaffle_graphify_readme_graphify_out_git_\uad00\ub9ac_\ucd94\ucc9c",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L179",
+      "weight": 1.0,
+      "source": "jaffle_graphify_readme_9_\ucf54\ub4dc_\ubcc0\uacbd_\ud6c4_graphify_\uc5c5\ub370\uc774\ud2b8",
+      "target": "jaffle_graphify_readme_dbt_\uc0d8\ud50c_\ud504\ub85c\uc81d\ud2b8_\uc77c\uc0c1_\ub8e8\ud2f4",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L98",
+      "weight": 1.0,
+      "source": "jaffle_graphify_readme_\uc218\ub3d9_\uc5c5\ub370\uc774\ud2b8",
+      "target": "jaffle_graphify_readme_codeblock_9",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L105",
+      "weight": 1.0,
+      "source": "jaffle_graphify_readme_dbt_\ud504\ub85c\uc81d\ud2b8_\ubcc0\uacbd_\ud6c4_\ucd94\ucc9c_\uc21c\uc11c",
+      "target": "jaffle_graphify_readme_codeblock_10",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L123",
+      "weight": 1.0,
+      "source": "jaffle_graphify_readme_\uac1c\ubc1c_\uc911_\uc790\ub3d9_\ub3d9\uae30\ud654",
+      "target": "jaffle_graphify_readme_codeblock_11",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L130",
+      "weight": 1.0,
+      "source": "jaffle_graphify_readme_git_commit_\uae30\uc900_\uc790\ub3d9_\uc5c5\ub370\uc774\ud2b8",
+      "target": "jaffle_graphify_readme_codeblock_12",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L140",
+      "weight": 1.0,
+      "source": "jaffle_graphify_readme_\ucf54\ub4dc_\ubcc0\uacbd_vs_\ubb38\uc11c_\ubcc0\uacbd_\uad6c\ubd84",
+      "target": "jaffle_graphify_readme_codeblock_13",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L151",
+      "weight": 1.0,
+      "source": "jaffle_graphify_readme_\uc0ad\uc81c_\ub610\ub294_\ub300\uaddc\ubaa8_\ub9ac\ud329\ud130\ub9c1_\ud6c4",
+      "target": "jaffle_graphify_readme_codeblock_14",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L161",
+      "weight": 1.0,
+      "source": "jaffle_graphify_readme_\uc644\uc804_\uc7ac\uc0dd\uc131\uc774_\ud544\uc694\ud55c_\uacbd\uc6b0",
+      "target": "jaffle_graphify_readme_codeblock_15",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L173",
+      "weight": 1.0,
+      "source": "jaffle_graphify_readme_graphify_out_git_\uad00\ub9ac_\ucd94\ucc9c",
+      "target": "jaffle_graphify_readme_codeblock_16",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L181",
+      "weight": 1.0,
+      "source": "jaffle_graphify_readme_dbt_\uc0d8\ud50c_\ud504\ub85c\uc81d\ud2b8_\uc77c\uc0c1_\ub8e8\ud2f4",
+      "target": "jaffle_graphify_readme_codeblock_17",
+      "confidence_score": 1.0
+    },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
@@ -392,16 +1072,6 @@
       "weight": 1.0,
       "source": "models_marts_dim_customers_sql",
       "target": "column_test_suite"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source_location": "## 6. Graphify \uacb0\uacfc \uae30\uc900 lineage",
-      "weight": 1.0,
-      "source": "models_marts_dim_customers_sql",
-      "target": "readme_graphify_dbt_demo"
     },
     {
       "relation": "references",
@@ -437,16 +1107,6 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source_location": "## 6. Graphify \uacb0\uacfc \uae30\uc900 lineage",
-      "weight": 1.0,
-      "source": "models_marts_fct_orders_sql",
-      "target": "readme_graphify_dbt_demo"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
       "source_file": "models/staging/stg_orders.sql",
       "source_location": "from {{ ref('raw_orders') }}",
       "weight": 1.0,
@@ -467,31 +1127,11 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source_location": "## 6. Graphify \uacb0\uacfc \uae30\uc900 lineage",
-      "weight": 1.0,
-      "source": "models_staging_stg_orders_sql",
-      "target": "readme_graphify_dbt_demo"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
       "source_file": "models/staging/stg_payments.sql",
       "source_location": "from {{ ref('raw_payments') }}",
       "weight": 1.0,
       "source": "models_staging_stg_payments_sql",
       "target": "raw_payments_source"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source_location": "## 6. Graphify \uacb0\uacfc \uae30\uc900 lineage",
-      "weight": 1.0,
-      "source": "models_staging_stg_payments_sql",
-      "target": "readme_graphify_dbt_demo"
     },
     {
       "relation": "references",
@@ -512,16 +1152,6 @@
       "weight": 1.0,
       "source": "models_staging_stg_customers_sql",
       "target": "column_test_suite"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source_location": "## 6. Graphify \uacb0\uacfc \uae30\uc900 lineage",
-      "weight": 1.0,
-      "source": "models_staging_stg_customers_sql",
-      "target": "readme_graphify_dbt_demo"
     },
     {
       "relation": "contains",
@@ -672,26 +1302,6 @@
       "weight": 1.0,
       "source": "dbt_project_configuration",
       "target": "duckdb_dev_profile"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source_location": "## 6. Graphify \uacb0\uacfc \uae30\uc900 lineage",
-      "weight": 1.0,
-      "source": "dbt_project_configuration",
-      "target": "readme_graphify_dbt_demo"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source_location": "## 4. Graphify \uc124\uce58 \ubc0f \uac80\uc99d",
-      "weight": 1.0,
-      "source": "opencode_plugin_config",
-      "target": "readme_graphify_dbt_demo"
     }
   ],
   "hyperedges": [
@@ -741,5 +1351,5 @@
       "source_file": "models/schema.yml"
     }
   ],
-  "built_at_commit": "673b39ff939309c4fef5372bc642f0624946aa80"
+  "built_at_commit": "4c2dd0525f47192c60aecb27940aebd1e3644056"
 }

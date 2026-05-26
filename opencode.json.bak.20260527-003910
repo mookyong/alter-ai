@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "code-review-graph": {
+      "command": "/home/dharma6872/miniconda3/envs/code-review-graph/bin/python",
+      "args": [
+        "-m",
+        "code_review_graph",
+        "serve"
+      ],
+      "cwd": "/home/dharma6872/workspace/test/graphify-dbt-demo/jaffle_graphify",
+      "type": "stdio",
+      "env": []
+    }
+  }
+}
