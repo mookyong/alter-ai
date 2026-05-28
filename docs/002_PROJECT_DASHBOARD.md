@@ -38,6 +38,7 @@
 - [[001_DOCUMENT_INDEX]]
 - [[00_admin/project_rules]]
 - [[01_hands_on/part-1_overview]]
+- [[01_hands_on/part-11_environment_installation]]
 - [[07_management/issue_register]]
 - [[07_management/risk_register]]
 - [[07_management/decision_log]]
