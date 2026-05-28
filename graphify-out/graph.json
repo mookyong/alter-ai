@@ -1,0 +1,27 @@
+{
+  "nodes": [
+    {"id":"readme","label":"README.md","file_type":"document","source_file":"README.md"},
+    {"id":"overview","label":"00_overview/README.md","file_type":"document","source_file":"00_overview/README.md"},
+    {"id":"deliverables","label":"산출물 정의표","file_type":"document","source_file":"01_planning/산출물 정의표.md"},
+    {"id":"mapping_table","label":"공식 산출물-작업용 산출물 매핑표","file_type":"document","source_file":"01_planning/공식 산출물-작업용 산출물 매핑표.md"},
+    {"id":"ai_strategy","label":"AI 에이전트 적용 전략","file_type":"document","source_file":"01_planning/AI 에이전트 적용 전략.md"},
+    {"id":"ai_staffing","label":"AI 에이전트 적용 전략 및 인력 배분 정리","file_type":"document","source_file":"01_planning/AI 에이전트 적용 전략 및 인력 배분 정리.md"},
+    {"id":"wbs","label":"WBS DBT 전환 일정","file_type":"document","source_file":"01_planning/WBS DBT 전환 일정.md"},
+    {"id":"kickoff","label":"프로젝트 킥오프 R&R 및 액션아이템","file_type":"document","source_file":"01_planning/프로젝트 킥오프 R&R 및 액션아이템.md"},
+    {"id":"requirements_readme","label":"02_requirements/README.md","file_type":"document","source_file":"02_requirements/README.md"}
+  ],
+  "edges": [
+    {"source":"readme","target":"overview","relation":"references","confidence":"EXTRACTED","confidence_score":1.0,"source_file":"README.md"},
+    {"source":"readme","target":"deliverables","relation":"references","confidence":"INFERRED","confidence_score":0.8,"source_file":"README.md"},
+    {"source":"overview","target":"requirements_readme","relation":"references","confidence":"EXTRACTED","confidence_score":1.0,"source_file":"00_overview/README.md"},
+    {"source":"deliverables","target":"mapping_table","relation":"references","confidence":"EXTRACTED","confidence_score":1.0,"source_file":"01_planning/산출물 정의표.md"},
+    {"source":"deliverables","target":"kickoff","relation":"conceptually_related_to","confidence":"INFERRED","confidence_score":0.8,"source_file":"01_planning/산출물 정의표.md"},
+    {"source":"ai_strategy","target":"wbs","relation":"conceptually_related_to","confidence":"EXTRACTED","confidence_score":1.0,"source_file":"01_planning/AI 에이전트 적용 전략.md"},
+    {"source":"ai_staffing","target":"wbs","relation":"conceptually_related_to","confidence":"EXTRACTED","confidence_score":1.0,"source_file":"01_planning/AI 에이전트 적용 전략 및 인력 배분 정리.md"},
+    {"source":"kickoff","target":"wbs","relation":"conceptually_related_to","confidence":"INFERRED","confidence_score":0.8,"source_file":"01_planning/프로젝트 킥오프 R&R 및 액션아이템.md"},
+    {"source":"requirements_readme","target":"overview","relation":"references","confidence":"EXTRACTED","confidence_score":1.0,"source_file":"02_requirements/README.md"}
+  ],
+  "hyperedges": [],
+  "input_tokens": 0,
+  "output_tokens": 0
+}
