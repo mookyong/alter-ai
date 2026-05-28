@@ -16,6 +16,7 @@
 - [[01_hands_on/part-8_graphify_integration]]
 - [[01_hands_on/part-9_code_review_graph]]
 - [[01_hands_on/part-10_operational_standards]]
+- [[01_hands_on/part-11_environment_installation]]
 
 ## PL 일일 관리
 

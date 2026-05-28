@@ -15,6 +15,7 @@
 | Graphify 적용 | [[01_hands_on/part-8_graphify_integration]] | Approved | 8부 |
 | code-review-graph 적용 | [[01_hands_on/part-9_code_review_graph]] | Approved | 9부 |
 | 운영 표준 | [[01_hands_on/part-10_operational_standards]] | Approved | 10부 |
+| 개발 환경 설치 및 초기 설정 | [[01_hands_on/part-11_environment_installation]] | Draft | 설치 절차 |
 
 ## 관리
 
