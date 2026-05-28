@@ -40,22 +40,22 @@
 
 ## 샘플 문서
 
-| 문서 | 위치 | 상태 | 비고 |
-| --- | --- | --- | --- |
-| 계획 샘플 | [[01_plan/README]] | Draft | 샘플 예문 |
-| 범위 샘플 | [[02_scope/무제/README]] | Draft | 샘플 예문 |
-| 아키텍처 샘플 | [[03_architecture/README]] | Draft | 샘플 예문 |
-| 디자인 샘플 | [[04_design/README]] | Draft | 샘플 예문 |
-| 실행 샘플 | [[05_execution/README]] | Draft | 샘플 예문 |
-| 검증 샘플 | [[06_validation/README]] | Draft | 샘플 예문 |
-| 관리 샘플 | [[07_management/README]] | Draft | 샘플 예문 |
-| 회의록 샘플 | [[08_meetings/weekly/README]] | Draft | 샘플 예문 |
-| 주간보고 샘플 | [[09_reports/weekly_report/README]] | Draft | 샘플 예문 |
-| 지식 샘플 | [[10_knowledge/README]] | Draft | 샘플 예문 |
-| 템플릿 샘플 | [[90_templates/README]] | Draft | 샘플 예문 |
-| 첨부 안내 샘플 | [[91_attachments/README]] | Draft | 샘플 예문 |
-| 개인 메모 샘플 | [[98_private_notes/README]] | Draft | 샘플 예문 |
-| 아카이브 샘플 | [[99_archive/README]] | Draft | 샘플 예문 |
+| 문서       | 위치                                  | 상태    | 비고    |
+| -------- | ----------------------------------- | ----- | ----- |
+| 계획 샘플    | [[01_plan/README]]                  | Draft | 샘플 예문 |
+| 범위 샘플    | [[02_scope/무제/README]]              | Draft | 샘플 예문 |
+| 아키텍처 샘플  | [[03_architecture/README]]          | Draft | 샘플 예문 |
+| 디자인 샘플   | [[04_design/README]]                | Draft | 샘플 예문 |
+| 실행 샘플    | [[05_execution/README]]             | Draft | 샘플 예문 |
+| 검증 샘플    | [[06_validation/README]]            | Draft | 샘플 예문 |
+| 관리 샘플    | [[07_management/README]]            | Draft | 샘플 예문 |
+| 회의록 샘플   | [[08_meetings/weekly/README]]       | Draft | 샘플 예문 |
+| 주간보고 샘플  | [[09_reports/weekly_report/README]] | Draft | 샘플 예문 |
+| 지식 샘플    | [[10_knowledge/README]]             | Draft | 샘플 예문 |
+| 템플릿 샘플   | [[90_templates/README]]             | Draft | 샘플 예문 |
+| 첨부 안내 샘플 | [[91_attachments/README]]           | Draft | 샘플 예문 |
+| 개인 메모 샘플 | [[98_private_notes/README]]         | Draft | 샘플 예문 |
+| 아카이브 샘플  | [[99_archive/README]]               | Draft | 샘플 예문 |
 
 ## 운영 원칙
 
