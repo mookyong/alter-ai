@@ -25,3 +25,40 @@ ds-to-dbt-airflow-docs/
 - 각 단계별 문서를 해당 폴더에 저장합니다.
 - 문서명은 날짜나 버전을 포함해 관리합니다.
 - 완료된 문서는 `99_archive`로 이동합니다.
+
+# 설치
+
+```text
+STEP 01. 프로젝트 관리에 필요한 기본적인 정보를 제공한 이후, 프로젝트 수행 및 관리 관련 이슈사항에 대해서 논의를 수행 함.
+- WBS, 요규사항 정의서 입력을 제공
+
+STEP 02. agent 정의하기
+- .opencode/opencode.jsonc
+- .opencode/agents/primary-pl.md
+- .opencode/agents/requirements.md
+- .opencode/agents/planning.md
+- .opencode/agents/mapping.md
+- .opencode/agents/design.md
+- .opencode/agents/validation.md
+- .opencode/agents/risk-issue.md
+- .opencode/agents/minutes-docs.md
+
+opencode.jsonc
+{
+  "$schema": "https://opencode.ai/config.json",
+  // Load the repo's local agent instructions.
+  "instructions": ["AGENTS.md"],
+  // Make the PL orchestrator the default primary agent.
+  "default_agent": "primary-pl"
+}
+
+STEP 03. graphify 정의하기
+conda create -n ds-to-dbt-airflow-docs python=3.12 -y
+conda activate ds-to-dbt-airflow-docs
+pip install "graphifyy[sql,leiden]"
+
+graphify --version
+graphify --help
+
+graphify install --platform opencode
+```
