@@ -1,0 +1,26 @@
+{
+  "workbench.editorAssociations": {
+    "*.parquet": "duckdb.dataFileViewer",
+    "*.csv": "duckdb.dataFileViewer",
+    "*.tsv": "duckdb.dataFileViewer",
+    "*.xlsx": "duckdb.dataFileViewer"
+  },
+  "files.eol": "\n",
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "markdown.extension.toc.levels": "2..6",
+  "todo-tree.general.tags": [
+    "TODO",
+    "FIXME",
+    "ISSUE",
+    "RISK",
+    "CHECK",
+    "QUESTION",
+    "DECISION",
+    "FOLLOWUP"
+  ],
+  "todo-tree.tree.showCountsInTree": true,
+  "todo-tree.highlights.enabled": true,
+  "gitlens.currentLine.enabled": true,
+  "gitlens.hovers.currentLine.over": "line"
+}

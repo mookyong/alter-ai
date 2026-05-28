@@ -1,0 +1,13 @@
+# Obsidian personal workspace
+docs/.obsidian/workspace.json
+docs/.obsidian/workspaces.json
+docs/.obsidian/workspace-mobile.json
+
+# Obsidian trash
+docs/.trash/
+
+# Private notes
+docs/98_private_notes/
+
+# code-review-graph generated files
+.code-review-graph/

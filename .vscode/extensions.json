@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "yzhang.markdown-all-in-one",
+    "bierner.markdown-mermaid",
+    "pomdtr.excalidraw-editor",
+    "hediet.vscode-drawio",
+    "GrapeCity.gc-excelviewer",
+    "Gruntfuggly.todo-tree",
+    "eamodio.gitlens"
+  ]
+}
