@@ -10,6 +10,9 @@ Obsidian → 프로젝트 안의 docs 폴더만 Vault로 연다.
 Git     → 프로젝트 루트 전체를 관리한다.
 ```
 
+> - 리눅스 버전 옵시디안 설치하는 방법도 진행해봤는데, UI 설치는 문제가 없습니다. 설치 자체는 잘됨. 그런데 문제는 사용성이 좋지 않아서, 윈도우 환경의 옵시디언을 사용하기로 하였습니다.
+> - 원본 docs 문서는 WSL 상에 두고, git 연동을 통해서 양쪽을 동기화하는 방향으로 진행하였습니다.
+> 
 ---
 
 ## 1. 이번 장의 목표
@@ -69,13 +72,16 @@ gsr-migration-ai-pl/
 Obsidian은 Windows 앱으로 실행하는 경우가 많습니다.
 WSL 내부 폴더를 Obsidian에서 열려면 Windows 경로가 필요합니다.
 
-WSL 터미널에서 프로젝트 루트로 이동합니다.
+~~WSL 터미널에서 프로젝트 루트로 이동합니다.
+
+> 아래 설정 모두 윈도우 환경에서는 동작하지 않습니다.
+> git 연동하는 방식으로 변경 함.
 
 ```bash
 cd ~/workspace/gsr-migration-ai-pl
 ```
 
-`docs` 폴더의 Windows 경로를 확인합니다.
+~~`docs` 폴더의 Windows 경로를 확인합니다.
 
 ```bash
 wslpath -w docs
@@ -87,7 +93,7 @@ wslpath -w docs
 \\wsl.localhost\Ubuntu\home\<wsl-user>\workspace\gsr-migration-ai-pl\docs
 ```
 
-또는 환경에 따라 다음처럼 나올 수 있습니다.
+~~또는 환경에 따라 다음처럼 나올 수 있습니다.
 
 ```text
 \\wsl$\Ubuntu\home\<wsl-user>\workspace\gsr-migration-ai-pl\docs
@@ -101,13 +107,16 @@ wslpath -w docs
 
 Obsidian을 실행합니다.
 
-처음 실행했거나 새 Vault를 열려면 아래 메뉴를 선택합니다.
+> 윈도우 환경에서 git을 통해서 공유된 docs 문서를 clone 합니다.
+> 참조 문서는 [[part-11_environment_installation#14. Obsidian Git 설정]]
+
+~~처음 실행했거나 새 Vault를 열려면 아래 메뉴를 선택합니다.
 
 ```text
 Open folder as vault
 ```
 
-앞 단계에서 확인한 `docs` 경로를 선택합니다.
+~~앞 단계에서 확인한 `docs` 경로를 선택합니다.
 
 ```text
 \\wsl.localhost\Ubuntu\home\<wsl-user>\workspace\gsr-migration-ai-pl\docs
